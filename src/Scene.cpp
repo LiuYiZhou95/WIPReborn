@@ -4,7 +4,7 @@
 #include <algorithm>
 #include "Scene.h"
 
-
+//WIPScene* g_scene = WIPScene::instance();
 
 WIPScene* WIPScene::instance()
 {

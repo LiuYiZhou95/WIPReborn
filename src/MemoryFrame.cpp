@@ -2,7 +2,6 @@
 #include "MemoryFrame.h"
 #include <fstream>
 
-/*核心函数基本不做安全检查*/
 INI_RESULT RBFrameAlloctor::init(size_t tsize,const char* taga)
 {
 	RBFN(RBFrameAlloctor::init);

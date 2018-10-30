@@ -34,6 +34,7 @@ InputManager::InputManager()
 
 InputManager::~InputManager()
 {
+	delete _instance;
 }
 
 bool InputManager::startup(char* mapfile)
@@ -264,3 +265,4 @@ void InputManager::set_move(bool v)
 	_move = v;
 }
 
+//InputManager* g_input_manager = InputManager::instance();

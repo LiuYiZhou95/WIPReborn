@@ -351,6 +351,11 @@ void WIPSprite::leave_scene(WIPScene* scene)
 WIPSprite* WIPSpriteFactory::create_sprite(const WIPSpriteCreator& creator)
 {
 	WIPSprite* s = WIPSprite::create(creator.w, creator.h, creator.body_tp, creator.collider_sx, creator.collider_sy);
+	if (!creator.world_render)
+	{
+		s->_render->is_visible = false;
+		return s;
+	}
 	s->_render->material.material_type = creator.mt;
 	switch (creator.mt)
 	{

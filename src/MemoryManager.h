@@ -21,7 +21,7 @@ class WIPMemoryManager : public FRefCountedObject
 public:
 	static WIPMemoryManager* get_instance()
 	{
-		static WIPMemoryManager* _instance;
+		static WIPMemoryManager* _instance = nullptr;
 		if (!_instance)
 			_instance = new WIPMemoryManager();
 		return _instance;

@@ -8,7 +8,7 @@
 #include "OpenGL/OpenGLRHI.h"
 #endif
 
-
+//WIPDynamicRHI *g_rhi = WIPDynamicRHI::get_rhi();
 
 WIPDynamicRHI *WIPDynamicRHI::get_rhi() {
 #ifndef USE_D3D11

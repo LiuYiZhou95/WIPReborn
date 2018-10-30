@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<wip version="0.125">
+	<scene>
+		<total type="n">7</total>
+		<e1>
+			<name type="s">background</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/bg.png</texture>
+			</Sprite>
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">145</x>
+				<y type="n">257</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">1</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">false</active>
+				<type type="s">GHOST</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">290</w>
+				<h type="n">514</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">0</n>
+			</components>
+		</e1>
+		<e2>
+			<name type="s">bird</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/bird.png</texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">135</x>
+				<y type="n">256</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">0</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">true</active>
+				<type type="s">RIGIDBODY</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">35</w>
+				<h type="n">24</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">1</n>
+				<e1 type="s">Drag</e1>
+				<Drag>
+					<active type="b">true</active>
+					<n type="n">0</n>
+					<e1 type="s">resource</e1>
+					<e2 type="s">volume</e2>
+					<e3 type="s">loop</e3>
+					<resource type="s">../Resources/test.ogg</resource>
+					<volume type="n">100</volume>
+					<loop type="b">true</loop>
+				</Drag>
+			</components>
+		</e2>
+		<e3>
+			<name type="s">gsz</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/gs.png</texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">70</x>
+				<y type="n">79</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">-1</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">true</active>
+				<type type="s">STATIC_RIGIDBODY</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">55</w>
+				<h type="n">322</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">0</n>
+			</components>
+		</e3>
+		<e4>
+			<name type="s">gsy</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/gs.png</texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">70</x>
+				<y type="n">79</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">-1</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">true</active>
+				<type type="s">STATIC_RIGIDBODY</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">55</w>
+				<h type="n">322</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">0</n>
+			</components>
+		</e4>
+		<e5>
+			<name type="s">gxz</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/gx.png</texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">70</x>
+				<y type="n">79</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">-1</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">true</active>
+				<type type="s">STATIC_RIGIDBODY</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">55</w>
+				<h type="n">321</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">0</n>
+			</components>
+		</e5>
+		<e6>
+			<name type="s">gxy</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s">./resources/flappy/gx.png</texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">70</x>
+				<y type="n">79</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">-1</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">true</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">true</active>
+				<type type="s">STATIC_RIGIDBODY</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">55</w>
+				<h type="n">321</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">0</n>
+			</components>
+		</e6>
+		<e7>
+			<name type="s">master</name>
+			<active type="b">true</active>
+			<type type="s">object</type>
+			<Sprite>
+				<active type="b">true</active>
+				<texture type="s"></texture>
+			</Sprite>			
+			<Transform>
+				<active type="b">true</active>
+				<x type="n">70</x>
+				<y type="n">79</y>
+				<rad type="n">0</rad>
+				<sx type="n">1</sx>
+				<sy type="n">1</sy>
+				<z_order type="n">1000</z_order>
+			</Transform>
+			<Animation>
+				<active type="b">false</active>
+				<auto type="b">false</auto>
+			</Animation>
+			<Collider>
+				<active type="b">false</active>
+				<type type="s">GHOST</type>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+				<w type="n">12</w>
+				<h type="n">12</h>
+			</Collider>
+			<Mesh>
+				<active type="b">true</active>
+				<w type="n">120</w>
+				<h type="n">120</h>
+				<cx type="n">0</cx>
+				<cy type="n">0</cy>
+			</Mesh>
+			<components>
+				<n type="n">1</n>
+				<e1 type="s">FlappyMaster</e1>
+				<FlappyMaster>
+					<active type="b">true</active>
+					<n type="n">0</n>
+				</FlappyMaster>
+			</components>
+		</e7>
+	</scene>
+</wip>

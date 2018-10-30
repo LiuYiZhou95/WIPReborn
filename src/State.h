@@ -8,7 +8,7 @@ public:
 	virtual void end() = 0;
 	virtual bool update(float dt) = 0;
 
-private:
+protected:
 	class StateController* _controller;
 };
 
@@ -18,8 +18,8 @@ public:
 	StateController();
 	virtual void set_state(State* s);
 	State* get_current_state() const;
-	void update(float dt);
-private:
+	virtual void update(float dt);
+protected:
 	State* _current_state;
 };
 

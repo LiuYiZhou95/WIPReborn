@@ -414,3 +414,4 @@ std::string WIPFileSystem::remove_trailing_slash(const std::string& pathName)
     return ret;
 }
 
+//WIPFileSystem* g_filesystem = WIPFileSystem::get_instance();

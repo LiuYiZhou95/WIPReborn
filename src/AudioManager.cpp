@@ -543,3 +543,4 @@ void StudioSound::DescriptionData::StopAll(FMOD_STUDIO_STOP_MODE mode){
   }
 }
 
+//AudioStudioManager* g_audio_manager = AudioStudioManager::instance();

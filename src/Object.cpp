@@ -2,7 +2,7 @@
 #include "EventSystem.h"
 #include "MemoryManager.h"
 
-
+//WIPMemoryManager* g_mem_manager = new WIPMemoryManager();
 
 
 
@@ -266,3 +266,4 @@ WIPTickComponent* WIPObject::create_tick_component(const char* cname, WIPSprite*
 
 //mem
 
+//RBPoolAllctor* g_pool_allocator = RBPoolAllctor::instance();

@@ -10,6 +10,7 @@
 #include "Render.h"
 
 //do not run code out of main code! it's out of controll
+
 WIPAnimationManager* g_animation_manager=nullptr;
 AudioStudioManager* g_audio_manager=nullptr;
 WIPFileSystem* g_filesystem=nullptr;

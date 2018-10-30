@@ -19,6 +19,7 @@ WIPScriptManager::WIPScriptManager()
 
 WIPScriptManager::~WIPScriptManager()
 {
+	delete _instance;
 }
 
 #ifdef USELUA
@@ -235,3 +236,4 @@ void WIPScriptManager::generate_api()
 
 #endif
 
+//WIPScriptManager* g_script_manager = WIPScriptManager::instance();

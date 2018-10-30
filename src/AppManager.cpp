@@ -28,6 +28,7 @@ WIPApp::WIPApp()
 
 WIPApp::~WIPApp()
 {
+	
 	g_animation_manager->Reduce();
 	g_animation_manager->Release();
 	g_audio_manager->Reduce();
@@ -65,4 +66,5 @@ WIPApp::~WIPApp()
 	g_physics_manager = nullptr;
 	g_script_manager = nullptr;
 	g_rhi = nullptr;
+	
 }

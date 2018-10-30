@@ -352,3 +352,4 @@ ResHandler* WIPResourceManager::alloc(const char* filename, WIPResourceType type
 	return NULL;
 }
 
+//WIPResourceManager* g_res_manager = WIPResourceManager::get_instance();
