@@ -1,0 +1,673 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{F10E0D67-E44D-3FEC-B1EF-D5D9E9060FFD}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>wip_engine</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\EngineNew\libs\wip\debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\EngineNew\libs\wip\debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">wip_engine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\EngineNew\bin\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">wip_engine.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">wip_engine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\EngineNew\bin\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">wip_engine.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">wip_engine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">.exe</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\EngineNew\libs\wip\rel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">wip_engine.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">wip_engine</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.lib</TargetExt>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Debug/</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4065;4244;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libs\glfw\lib\win32\glfw3.lib;..\libs\FreeImage\lib\win32\freeimage.lib;..\libs\FreeImage\lib\win32\jpeg.lib;..\libs\FreeImage\lib\win32\mng.lib;..\libs\FreeImage\lib\win32\openexr.lib;..\libs\FreeImage\lib\win32\openjpeg.lib;..\libs\FreeImage\lib\win32\png.lib;..\libs\FreeImage\lib\win32\rawlite.lib;..\libs\FreeImage\lib\win32\tiff.lib;..\libs\FreeImage\lib\win32\zlib.lib;..\libs\lua523\lib\win32\lua.lib;..\libs\freetype\lib\freetype.lib;..\libs\fmod_fsbank\lib\fsbank_vc.lib;..\libs\fmod_lowlevel\lib\fmod_vc.lib;..\libs\fmod_studio\lib\fmodstudio_vc.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /machine:x86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/EngineNew/bin/Debug/wip_engine.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/EngineNew/bin/Debug/wip_engine.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>Release/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4065;4244;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libs\glfw\lib\win32\glfw3.lib;..\libs\FreeImage\lib\win32\freeimage.lib;..\libs\FreeImage\lib\win32\jpeg.lib;..\libs\FreeImage\lib\win32\mng.lib;..\libs\FreeImage\lib\win32\openexr.lib;..\libs\FreeImage\lib\win32\openjpeg.lib;..\libs\FreeImage\lib\win32\png.lib;..\libs\FreeImage\lib\win32\rawlite.lib;..\libs\FreeImage\lib\win32\tiff.lib;..\libs\FreeImage\lib\win32\zlib.lib;..\libs\lua523\lib\win32\lua.lib;..\libs\freetype\lib\freetype.lib;..\libs\fmod_fsbank\lib\fsbank_vc.lib;..\libs\fmod_lowlevel\lib\fmod_vc.lib;..\libs\fmod_studio\lib\fmodstudio_vc.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /machine:x86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/EngineNew/bin/Release/wip_engine.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/EngineNew/bin/Release/wip_engine.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>MinSizeRel/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DisableSpecificWarnings>4065;4244;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR="MinSizeRel";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libs\glfw\lib\win32\glfw3.lib;..\libs\FreeImage\lib\win32\freeimage.lib;..\libs\FreeImage\lib\win32\jpeg.lib;..\libs\FreeImage\lib\win32\mng.lib;..\libs\FreeImage\lib\win32\openexr.lib;..\libs\FreeImage\lib\win32\openjpeg.lib;..\libs\FreeImage\lib\win32\png.lib;..\libs\FreeImage\lib\win32\rawlite.lib;..\libs\FreeImage\lib\win32\tiff.lib;..\libs\FreeImage\lib\win32\zlib.lib;..\libs\lua523\lib\win32\lua.lib;..\libs\freetype\lib\freetype.lib;..\libs\fmod_fsbank\lib\fsbank_vc.lib;..\libs\fmod_lowlevel\lib\fmod_vc.lib;..\libs\fmod_studio\lib\fmodstudio_vc.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /machine:x86</AdditionalOptions>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/EngineNew/bin/MinSizeRel/wip_engine.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/EngineNew/bin/MinSizeRel/wip_engine.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>RelWithDebInfo/</AssemblerListingLocation>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4065;4244;4800</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>false</RuntimeTypeInfo>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR="RelWithDebInfo";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NOMINMAX;VC_EXTRALEAN;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>C:\EngineNew\src\RBMath\Inc;C:\EngineNew\src\RBMath\Inc\Platform;C:\EngineNew\src;C:\EngineNew\src\thirdpart;C:\EngineNew\src\Platform;C:\EngineNew\src\flyUI;C:\EngineNew\src\SoftR;C:\EngineNew\libs\glfw\include\GLFW;C:\EngineNew\src\thirdpart\glad\include\glad;C:\EngineNew\src\thirdpart\glad\include\KHR;C:\EngineNew\src\thirdpart\Box2D;C:\EngineNew\libs\FreeImage\include;C:\EngineNew\libs\freetype;C:\EngineNew\libs\freetype\include;C:\EngineNew\libs\fmod_studio\inc;C:\EngineNew\libs\fmod_lowlevel\inc;C:\EngineNew\lib\fmod_fsbank\inc;C:\EngineNew\src\thirdpart\imgui;C:\EngineNew\src\thirdpart\Remotery\lib;C:\EngineNew\src\OpenGL;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Link>
+      <AdditionalDependencies>..\libs\glfw\lib\win32\glfw3.lib;..\libs\FreeImage\lib\win32\freeimage.lib;..\libs\FreeImage\lib\win32\jpeg.lib;..\libs\FreeImage\lib\win32\mng.lib;..\libs\FreeImage\lib\win32\openexr.lib;..\libs\FreeImage\lib\win32\openjpeg.lib;..\libs\FreeImage\lib\win32\png.lib;..\libs\FreeImage\lib\win32\rawlite.lib;..\libs\FreeImage\lib\win32\tiff.lib;..\libs\FreeImage\lib\win32\zlib.lib;..\libs\lua523\lib\win32\lua.lib;..\libs\freetype\lib\freetype.lib;..\libs\fmod_fsbank\lib\fsbank_vc.lib;..\libs\fmod_lowlevel\lib\fmod_vc.lib;..\libs\fmod_studio\lib\fmodstudio_vc.lib;opengl32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>%(AdditionalOptions) /machine:X86 /machine:x86</AdditionalOptions>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>msvcrt.lib;libcmt.lib;%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <ImportLibrary>C:/EngineNew/bin/RelWithDebInfo/wip_engine.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/EngineNew/bin/RelWithDebInfo/wip_engine.pdb</ProgramDataBaseFile>
+      <SubSystem>Console</SubSystem>
+      <Version>
+      </Version>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\EngineNew\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/EngineNew/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/EngineNew -BC:/EngineNew/build --check-stamp-file C:/EngineNew/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/EngineNew/CMakeLists.txt;C:\EngineNew\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystem.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\EngineNew\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\EngineNew\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/EngineNew/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/EngineNew -BC:/EngineNew/build --check-stamp-file C:/EngineNew/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/EngineNew/CMakeLists.txt;C:\EngineNew\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystem.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\EngineNew\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\EngineNew\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/EngineNew/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/EngineNew -BC:/EngineNew/build --check-stamp-file C:/EngineNew/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/EngineNew/CMakeLists.txt;C:\EngineNew\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystem.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\EngineNew\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\EngineNew\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/EngineNew/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HC:/EngineNew -BC:/EngineNew/build --check-stamp-file C:/EngineNew/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/EngineNew/CMakeLists.txt;C:\EngineNew\CMakeLists.txt;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystem.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;C:\EngineNew\build\CMakeFiles\feature_tests.cxx;C:\Program Files\CMake\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;C:\EngineNew\build\CMakeFiles\3.9.0-rc3\CMakeCXXCompiler.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindOpenGL.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.9\Modules\FindPackageMessage.cmake;C:\EngineNew\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\EngineNew\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AppManager.cpp" />
+    <ClCompile Include="..\src\D3D11\D3D11RHI.cpp" />
+    <ClCompile Include="..\src\GameComponent.cpp" />
+    <ClCompile Include="..\src\global_init.cpp" />
+    <ClCompile Include="..\src\SoftR\SoftRRHI.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\State.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Animation.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AnimationClip.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AnimationEvent.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AnimationManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AnimationQueue.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AudioFmodSystem.cpp" />
+    <ClCompile Include="C:\EngineNew\src\AudioManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Camera.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Collider.cpp" />
+    <ClCompile Include="C:\EngineNew\src\EditorMode.cpp" />
+    <ClCompile Include="C:\EngineNew\src\EventSystem.cpp" />
+    <ClCompile Include="C:\EngineNew\src\FileSystem.cpp" />
+    <ClCompile Include="C:\EngineNew\src\FrameBox.cpp" />
+    <ClCompile Include="C:\EngineNew\src\ImguiRender.cpp" />
+    <ClCompile Include="C:\EngineNew\src\IniHelper.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Input.cpp" />
+    <ClCompile Include="C:\EngineNew\src\InputManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Logger.cpp" />
+    <ClCompile Include="C:\EngineNew\src\LuaAPI.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\LuaUI.cpp" />
+    <ClCompile Include="C:\EngineNew\src\MemoryFrame.cpp" />
+    <ClCompile Include="C:\EngineNew\src\MemoryPool.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Object.cpp" />
+    <ClCompile Include="C:\EngineNew\src\PhysicsManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Profiler.cpp" />
+    <ClCompile Include="C:\EngineNew\src\QuadTree.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RBTimer.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RemoteryProfiler.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Render.cpp" />
+    <ClCompile Include="C:\EngineNew\src\ResourceManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Scene.cpp" />
+    <ClCompile Include="C:\EngineNew\src\ScriptManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Sound.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Sprite.cpp" />
+    <ClCompile Include="C:\EngineNew\src\ThreadPool.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Trace.cpp" />
+    <ClCompile Include="C:\EngineNew\src\UIWrap.cpp" />
+    <ClCompile Include="C:\EngineNew\src\UserComponent.cpp" />
+    <ClCompile Include="C:\EngineNew\src\WIPTime.cpp" />
+    <ClCompile Include="C:\EngineNew\src\main.cpp" />
+    <ClCompile Include="C:\EngineNew\src\ofApp.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\Color32.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\Colorf.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\RBMath.cpp" />
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\RBMathImpl.cpp" />
+    <None Include="C:\EngineNew\src\thirdpart\ConvertUTF.c" />
+    <ClCompile Include="C:\EngineNew\src\Platform\GLFWApp.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Platform\GlfwImguiRender.cpp" />
+    <ClCompile Include="C:\EngineNew\src\Platform\glfw_callbacks.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Rope\b2Rope.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Body.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2ContactManager.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Fixture.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Island.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2World.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2WorldCallbacks.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2DistanceJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2FrictionJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2GearJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2Joint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2MotorJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2MouseJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2PulleyJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2RopeJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2WeldJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2WheelJoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2CircleContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2Contact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ContactSolver.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2PolygonContact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2BlockAllocator.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Draw.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Math.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Settings.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2StackAllocator.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Timer.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2BroadPhase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollideCircle.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollideEdge.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollidePolygon.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2Collision.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2Distance.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2DynamicTree.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2TimeOfImpact.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2ChainShape.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2CircleShape.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2EdgeShape.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2PolygonShape.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\glad\src\glad.cpp" />
+    <ClCompile Include="C:\EngineNew\src\OpenGL\OpenGLRHI.cpp" />
+    <ClCompile Include="C:\EngineNew\src\flyUI\ActiveDrawableRect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\BasePanel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\BaseWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\ButtonWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\PictureWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\ScrollerWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\StaticText.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\SwitchWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\TouchWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui_demo.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui_draw.cpp" />
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Remotery\lib\Remotery.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferConstant.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferIndex.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferUnorder.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferVertex.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\InnerData.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\Pipeline.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Rasterizer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SamplePoint.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\SamplerBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderPixel.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderVertex.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\SimGPU.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SimGPU_new.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageGS.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageIA.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageOM.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StagePS.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageVS.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture1D.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture2D.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture3D.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\TextureBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewBase.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewRenderTarget.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewShaderResource.cpp" />
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewUnorderAccess.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\Animation.h" />
+    <ClInclude Include="..\src\AnimationClip.h" />
+    <ClInclude Include="..\src\AnimationEvent.h" />
+    <ClInclude Include="..\src\AnimationManager.h" />
+    <ClInclude Include="..\src\AnimationQueue.h" />
+    <ClInclude Include="..\src\AppManager.h" />
+    <ClInclude Include="..\src\Assertion.h" />
+    <ClInclude Include="..\src\AudioFmodSystem.h" />
+    <ClInclude Include="..\src\AudioManager.h" />
+    <ClInclude Include="..\src\Camera.h" />
+    <ClInclude Include="..\src\D3D11ShaderResources.h" />
+    <ClInclude Include="..\src\D3D11\D3D11RHI.h" />
+    <ClInclude Include="..\src\EditorMode.h" />
+    <ClInclude Include="..\src\EventSystem.h" />
+    <ClInclude Include="..\src\FileSystem.h" />
+    <ClInclude Include="..\src\FmodInstance.h" />
+    <ClInclude Include="..\src\FrameBox.h" />
+    <ClInclude Include="..\src\GameComponent.h" />
+    <ClInclude Include="..\src\ImguiRender.h" />
+    <ClInclude Include="..\src\IniHelper.h" />
+    <ClInclude Include="..\src\Input.h" />
+    <ClInclude Include="..\src\InputManager.h" />
+    <ClInclude Include="..\src\KeyDefinetions.h" />
+    <ClInclude Include="..\src\LinkList.h" />
+    <ClInclude Include="..\src\Logger.h" />
+    <ClInclude Include="..\src\LuaAPI.h" />
+    <ClInclude Include="..\src\LuaUI.h" />
+    <ClInclude Include="..\src\MemoryFrame.h" />
+    <ClInclude Include="..\src\MemoryManager.h" />
+    <ClInclude Include="..\src\MemoryPool.h" />
+    <ClInclude Include="..\src\Object.h" />
+    <ClInclude Include="..\src\ofApp.h" />
+    <ClInclude Include="..\src\OpenGL\OpenGLRHI.h" />
+    <ClInclude Include="..\src\PhysicsManager.h" />
+    <ClInclude Include="..\src\Platform\GLFWApp.h" />
+    <ClInclude Include="..\src\Platform\GlfwImguiRender.h" />
+    <ClInclude Include="..\src\Platform\glfw_callbacks.h" />
+    <ClInclude Include="..\src\Platform\Win32D3D11.h" />
+    <ClInclude Include="..\src\ProducerConsumerQueue.h" />
+    <ClInclude Include="..\src\Profiler.h" />
+    <ClInclude Include="..\src\QuadTree.h" />
+    <ClInclude Include="..\src\RBTimer.h" />
+    <ClInclude Include="..\src\RefCount.h" />
+    <ClInclude Include="..\src\RefCountPtr.h" />
+    <ClInclude Include="..\src\RemoteryProfiler.h" />
+    <ClInclude Include="..\src\Render.h" />
+    <ClInclude Include="..\src\RenderResource.h" />
+    <ClInclude Include="..\src\ResourceManager.h" />
+    <ClInclude Include="..\src\Scene.h" />
+    <ClInclude Include="..\src\ScriptManager.h" />
+    <ClInclude Include="..\src\SoftR\BufferBase.h" />
+    <ClInclude Include="..\src\SoftR\BufferConstant.h" />
+    <ClInclude Include="..\src\SoftR\BufferIndex.h" />
+    <ClInclude Include="..\src\SoftR\BufferUnorder.h" />
+    <ClInclude Include="..\src\SoftR\BufferVertex.h" />
+    <ClInclude Include="..\src\SoftR\GPUMemory.h" />
+    <ClInclude Include="..\src\SoftR\InnerData.h" />
+    <ClInclude Include="..\src\SoftR\Pipeline.h" />
+    <ClInclude Include="..\src\SoftR\Rasterizer.h" />
+    <ClInclude Include="..\src\SoftR\SamplePoint.h" />
+    <ClInclude Include="..\src\SoftR\SamplerBase.h" />
+    <ClInclude Include="..\src\SoftR\ShaderBase.h" />
+    <ClInclude Include="..\src\SoftR\ShaderGeometry.h" />
+    <ClInclude Include="..\src\SoftR\ShaderPixel.h" />
+    <ClInclude Include="..\src\SoftR\ShaderVertex.h" />
+    <ClInclude Include="..\src\SoftR\Shader\BaseShaderPS.h" />
+    <ClInclude Include="..\src\SoftR\Shader\BaseShaderVS.h" />
+    <ClInclude Include="..\src\SoftR\Shader\WIPShaderPS.h" />
+    <ClInclude Include="..\src\SoftR\Shader\WIPShaderVS.h" />
+    <ClInclude Include="..\src\SoftR\SimGPU.h" />
+    <ClInclude Include="..\src\SoftR\SimGPU_new.h" />
+    <ClInclude Include="..\src\SoftR\SoftRRHI.h" />
+    <ClInclude Include="..\src\SoftR\StageBase.h" />
+    <ClInclude Include="..\src\SoftR\StageGS.h" />
+    <ClInclude Include="..\src\SoftR\StageIA.h" />
+    <ClInclude Include="..\src\SoftR\StageOM.h" />
+    <ClInclude Include="..\src\SoftR\StagePS.h" />
+    <ClInclude Include="..\src\SoftR\StageVS.h" />
+    <ClInclude Include="..\src\SoftR\Texture1D.h" />
+    <ClInclude Include="..\src\SoftR\Texture2D.h" />
+    <ClInclude Include="..\src\SoftR\Texture3D.h" />
+    <ClInclude Include="..\src\SoftR\TextureBase.h" />
+    <ClInclude Include="..\src\SoftR\ThreadPool.h" />
+    <ClInclude Include="..\src\SoftR\VertexFormat.h" />
+    <ClInclude Include="..\src\SoftR\ViewBase.h" />
+    <ClInclude Include="..\src\SoftR\ViewRenderTarget.h" />
+    <ClInclude Include="..\src\SoftR\ViewShaderResouce.h" />
+    <ClInclude Include="..\src\SoftR\ViewUnorderAccess.h" />
+    <ClInclude Include="..\src\Sound.h" />
+    <ClInclude Include="..\src\Sprite.h" />
+    <ClInclude Include="..\src\State.h" />
+    <ClInclude Include="..\src\thirdpart\ConvertUTF.h" />
+    <ClInclude Include="..\src\thirdpart\SimpleIni.h" />
+    <ClInclude Include="..\src\ThreadPool.h" />
+    <ClInclude Include="..\src\Trace.h" />
+    <ClInclude Include="..\src\UIWrap.h" />
+    <ClInclude Include="..\src\UserComponent.h" />
+    <ClInclude Include="..\src\WIPTime.h" />
+    <ClInclude Include="..\src\WorldRender.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

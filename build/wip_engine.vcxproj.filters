@@ -1,0 +1,801 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Rope\b2Rope.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Body.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2ContactManager.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Fixture.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2Island.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2World.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\b2WorldCallbacks.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2DistanceJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2FrictionJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2GearJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2Joint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2MotorJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2MouseJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2PrismaticJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2PulleyJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2RevoluteJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2RopeJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2WeldJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Joints\b2WheelJoint.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ChainAndCircleContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ChainAndPolygonContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2CircleContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2Contact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2ContactSolver.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2EdgeAndCircleContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2EdgeAndPolygonContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2PolygonAndCircleContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Dynamics\Contacts\b2PolygonContact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2BlockAllocator.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Draw.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Math.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Settings.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2StackAllocator.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Common\b2Timer.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2BroadPhase.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollideCircle.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollideEdge.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2CollidePolygon.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2Collision.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2Distance.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2DynamicTree.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\b2TimeOfImpact.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2ChainShape.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2CircleShape.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2EdgeShape.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Box2D\Collision\Shapes\b2PolygonShape.cpp">
+      <Filter>box2d</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\glad\src\glad.cpp">
+      <Filter>glad</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\ActiveDrawableRect.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\BasePanel.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\BaseWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\ButtonWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\PictureWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\ScrollerWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\StaticText.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\SwitchWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\flyUI\TouchWidget.cpp">
+      <Filter>ui</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferConstant.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferIndex.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferUnorder.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\BufferVertex.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\InnerData.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Pipeline.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Rasterizer.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SamplePoint.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SamplerBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SimGPU.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\SimGPU_new.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageGS.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageIA.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageOM.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StagePS.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\StageVS.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture1D.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture2D.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\Texture3D.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\TextureBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewRenderTarget.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewShaderResource.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ViewUnorderAccess.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Animation.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AnimationClip.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AnimationEvent.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AnimationManager.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AnimationQueue.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AudioFmodSystem.cpp">
+      <Filter>Engine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\AudioManager.cpp">
+      <Filter>Engine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Collider.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\Color32.cpp">
+      <Filter>Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\Colorf.cpp">
+      <Filter>Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\RBMath.cpp">
+      <Filter>Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RBMath\Src\RBMathImpl.cpp">
+      <Filter>Engine\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\EventSystem.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\FileSystem.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\FrameBox.cpp">
+      <Filter>Engine\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Platform\glfw_callbacks.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Platform\GLFWApp.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui_demo.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\imgui\imgui_draw.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Input.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\InputManager.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\ImguiRender.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Platform\GlfwImguiRender.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\IniHelper.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\MemoryFrame.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\MemoryPool.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\LuaAPI.cpp">
+      <Filter>Engine\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\LuaUI.cpp">
+      <Filter>Engine\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\ScriptManager.cpp">
+      <Filter>Engine\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Logger.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Object.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\PhysicsManager.cpp">
+      <Filter>Engine\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Profiler.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\ofApp.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RBTimer.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\thirdpart\Remotery\lib\Remotery.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\RemoteryProfiler.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\ResourceManager.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Trace.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\ThreadPool.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\WIPTime.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\OpenGL\OpenGLRHI.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Render.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Sound.cpp">
+      <Filter>Engine\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Scene.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Sprite.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\UIWrap.cpp">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\EditorMode.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\UserComponent.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\main.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\D3D11\D3D11RHI.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\Camera.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\QuadTree.cpp">
+      <Filter>Engine\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\GameComponent.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\SoftR\SoftRRHI.cpp">
+      <Filter>Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderBase.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderPixel.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\EngineNew\src\SoftR\ShaderVertex.cpp">
+      <Filter>SoftR</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\State.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\global_init.cpp">
+      <Filter>Engine\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\AppManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\EngineNew\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="box2d">
+      <UniqueIdentifier>{7A2A27D9-AFEF-34D6-8DD9-7048DF873258}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ui">
+      <UniqueIdentifier>{A25ABDBB-51A1-3337-AB46-666B5098C229}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="glad">
+      <UniqueIdentifier>{4E3380EF-6D2A-3086-86CB-E92E4F064A68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoftR">
+      <UniqueIdentifier>{D8792962-E0D6-3EE5-90BF-CD525395D752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{1cecca51-06c9-4e90-8bc9-e45554751178}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Audio">
+      <UniqueIdentifier>{85cdb3a1-d975-442a-8502-ee4ddf5bec86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Graphics">
+      <UniqueIdentifier>{fd13c8b5-58d2-497e-af6e-cdb9f21de425}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{c148583a-0816-4a2c-aea0-81016958433e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Object">
+      <UniqueIdentifier>{469233f3-b044-4ecd-893f-0bd92e9eb96e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Common">
+      <UniqueIdentifier>{b90d3f04-553f-4ae2-8566-29a5baa8a2eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Animation">
+      <UniqueIdentifier>{2830765b-837f-4763-a05d-63ae298983f0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Game">
+      <UniqueIdentifier>{3d9e4beb-74b8-4e53-8664-c29298fe0546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Component">
+      <UniqueIdentifier>{b3fafe3a-d908-495b-8f43-448812709a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Math">
+      <UniqueIdentifier>{7a670a25-a10d-4af2-81b5-c7e65f6af4a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI">
+      <UniqueIdentifier>{08049733-4d00-4f50-9533-5695c0b5f3c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\UI\DebugUI">
+      <UniqueIdentifier>{a322ccb5-e42f-4be5-9ad8-1337aa26af25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Script">
+      <UniqueIdentifier>{75b75e6f-3072-49b9-91a8-c69f0ca85d3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Physics">
+      <UniqueIdentifier>{db703986-ed07-4e55-ae7c-13c0a99c2f01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoftR\Shader">
+      <UniqueIdentifier>{6dce0fae-47f1-4ac8-bb05-5cba1f5f52aa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\EngineNew\src\thirdpart\ConvertUTF.c">
+      <Filter>Engine\Common</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\thirdpart\ConvertUTF.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\thirdpart\SimpleIni.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Animation.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AnimationClip.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AnimationEvent.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AnimationManager.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AnimationQueue.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FrameBox.h">
+      <Filter>Engine\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Assertion.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FileSystem.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\IniHelper.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LinkList.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Logger.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MemoryFrame.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MemoryManager.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\MemoryPool.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Profiler.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RBTimer.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RefCountPtr.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RefCount.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ThreadPool.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Trace.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WIPTime.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AudioFmodSystem.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AudioManager.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Sound.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\AppManager.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Camera.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\D3D11\D3D11RHI.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\D3D11ShaderResources.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\OpenGL\OpenGLRHI.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Render.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RenderResource.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\WorldRender.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Platform\Win32D3D11.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Input.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\InputManager.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\KeyDefinetions.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\FmodInstance.h">
+      <Filter>Engine\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Platform\GLFWApp.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\PhysicsManager.h">
+      <Filter>Engine\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ProducerConsumerQueue.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ImguiRender.h">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Platform\GlfwImguiRender.h">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ofApp.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Platform\glfw_callbacks.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EditorMode.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\RemoteryProfiler.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ResourceManager.h">
+      <Filter>Engine\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ScriptManager.h">
+      <Filter>Engine\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LuaUI.h">
+      <Filter>Engine\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\LuaAPI.h">
+      <Filter>Engine\Script</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UIWrap.h">
+      <Filter>Engine\UI\DebugUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\EventSystem.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Scene.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Object.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Sprite.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\UserComponent.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\QuadTree.h">
+      <Filter>Engine\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\GameComponent.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\SoftRRHI.h">
+      <Filter>Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StagePS.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StageBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StageGS.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ShaderPixel.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ShaderVertex.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\SamplerBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ShaderBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ShaderGeometry.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\BufferUnorder.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\GPUMemory.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\BufferBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\BufferConstant.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Pipeline.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Texture2D.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StageOM.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Rasterizer.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\SimGPU.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\SimGPU_new.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StageIA.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\SamplePoint.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\InnerData.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\BufferIndex.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\BufferVertex.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\StageVS.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\VertexFormat.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ThreadPool.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ViewUnorderAccess.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ViewBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ViewRenderTarget.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\ViewShaderResouce.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Texture3D.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\TextureBase.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Texture1D.h">
+      <Filter>SoftR</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Shader\BaseShaderVS.h">
+      <Filter>SoftR\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Shader\BaseShaderPS.h">
+      <Filter>SoftR\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Shader\WIPShaderVS.h">
+      <Filter>SoftR\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SoftR\Shader\WIPShaderPS.h">
+      <Filter>SoftR\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\State.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
