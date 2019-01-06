@@ -24,6 +24,7 @@ WIPApp::WIPApp()
 	g_physics_manager = WIPPhysicsManager::instance();
 	g_script_manager = WIPScriptManager::instance();
 	g_rhi = WIPDynamicRHI::get_rhi();
+	g_frame_player = WIPFrameAnimationPlayer::instance();
 }
 
 WIPApp::~WIPApp()
@@ -53,7 +54,10 @@ WIPApp::~WIPApp()
 	g_script_manager->Release();
 	g_rhi->Reduce();
 	g_rhi->Release();
+	g_frame_player->Reduce();
+	g_frame_player->Release();
 
+	g_frame_player = nullptr;
 	g_animation_manager = nullptr;
 	g_audio_manager = nullptr;
 	g_filesystem = nullptr;

@@ -164,6 +164,9 @@ public:
 
 	virtual WIPViewPort* change_viewport(WIPViewPort* viewport);
 
+	virtual void change_viewport(int x, int y, int w, int h);
+
+
 	virtual void set_back_buffer(const WIPRenderTexture2D* render_texture) const;
 
 	virtual void set_main_back_buffer() const;
@@ -198,6 +201,11 @@ public:
 	virtual void disable_blend() const;
 
 	virtual void set_blend_function() const;
+
+	virtual void enable_stencil_test()const ;
+	virtual void disable_stencil_test()const ;
+	virtual void set_stencil_write(bool val) ;
+	virtual void set_stebcil_function() ;
 
 	virtual bool begin_debug_context();
 

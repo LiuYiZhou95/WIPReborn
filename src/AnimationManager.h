@@ -9,7 +9,7 @@
 using std::list;
 using std::vector;
 
-#define WIP_ANIMATION_DELTA_T 1/24
+#define WIP_ANIMATION_DELTA_T 1/24.f
 
 class WIPAnimationClip;
 class WIPClipInstance;
@@ -49,4 +49,38 @@ private:
 	vector<WIPClipInstance*> _remove_list;
 };
 
+
+
+
 extern WIPAnimationManager* g_animation_manager;
+
+
+//this is just a game related system should not be here or to redesign!!!
+class WIPFrameAnimationPlayer : public FRefCountedObject
+{
+public:
+	static WIPFrameAnimationPlayer* instance();
+
+	bool startup(int dis_x, int dis_y,int displayw,int displayh);
+	void shutdown();
+	
+
+	void play_clip(class WIPFrameAnimationClip* clip);
+	bool update(f32 dt);
+protected:
+	WIPFrameAnimationPlayer()
+	{}
+	~WIPFrameAnimationPlayer() {}
+
+
+	
+private:
+	bool _used=false;
+	//f32 _cur_dt;
+	f32 _delta_t= WIP_ANIMATION_DELTA_T;
+	int _dis_x, _dis_y;
+	int _displayw, _displayh;
+	class WIPFrameAnimationClip* _playing_clip = nullptr;
+};
+
+extern WIPFrameAnimationPlayer* g_frame_player;

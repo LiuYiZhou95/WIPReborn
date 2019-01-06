@@ -100,6 +100,8 @@ bool GLFWApp::init()
 	clock->update();
 	LOG_INFO("Time start up...");
 
+	
+
 
 	_frame = 1.f / fps;
 
@@ -130,9 +132,12 @@ bool GLFWApp::init()
 
 	g_temp_uisys->startup();
 
-	
-
 	return true;
+}
+
+void GLFWApp::swap()
+{
+	glfwSwapBuffers(window);
 }
 
 void GLFWApp::run()
@@ -140,7 +145,7 @@ void GLFWApp::run()
 
 	while (((!glfwWindowShouldClose(window)) && (!_exit_requist)))
 	{
-
+		
 		if (_exit_requist)
 			break;
 		curTime = times->get_time();
@@ -180,12 +185,11 @@ void GLFWApp::run()
 			rmt_EndCPUSample();
 
 			//todo:move to camera::clear add rhi!
-			
+			g_rhi->set_depth_write(true);
 			g_rhi->clear_back_buffer(RBColorf::black);
 			//glViewport(0, 0, window_w, window_h);
 			//glClearColor(0.85, 0.85, 0.85, 1);
-			glClearDepth(1);
-			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			
 
 
 			//g_rhi->set_shader(0);
@@ -280,6 +284,13 @@ void GLFWApp::run()
 	}
 	g_scene->clear();
 	
+}
+
+void GLFWApp::set_cursor_state(bool enable)
+{
+	ImGuiIO& io = ImGui::GetIO();
+	io.MouseDrawCursor = enable;
+	glfwSetInputMode(window, GLFW_CURSOR, enable?GLFW_CURSOR_NORMAL: GLFW_CURSOR_HIDDEN);
 }
 
 GLFWApp::~GLFWApp()

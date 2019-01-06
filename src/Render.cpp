@@ -91,6 +91,7 @@ void WorldRender::render(const WIPCamera* cam)
 	sort_by_texture();
 	sort_by_zorder();
 	g_rhi->enable_depth_test();
+	g_rhi->set_depth_write(true);
 	//render opaque
 	if (!opaque_objects.empty())
 	{
@@ -153,7 +154,7 @@ void WorldRender::render(const WIPCamera* cam)
 			}
 		}
 	}
-	g_rhi->set_depth_write(true);
+	
 	opaque_objects.clear();
 	blend_objects.clear();
 	draw_c = 0;
@@ -463,7 +464,7 @@ int TextRender::get_length_pixel(const wchar_t * chs)
 	return r;
 }
 
-void TextRender::render_text(int px, int py, const wchar_t* chs, int len,int maxw, const WIPCamera* cam)
+void TextRender::render_text(int px, int py, const wchar_t* chs, int len,int maxw, const WIPCamera* cam,int padding_x)
 {
 	int x = px;
 	int y = py;
@@ -474,13 +475,13 @@ void TextRender::render_text(int px, int py, const wchar_t* chs, int len,int max
 		if (ch == L'\n')
 		{
 			x = px;
-			y -= text_h;
+			y += text_h;
 			continue;
 		}
-		if (x+20-px >= maxw)
+		if (x+ padding_x -px >= maxw)
 		{
 			x = px;
-			y -= text_h;
+			y += text_h;
 			i--;
 			continue;
 		}
@@ -489,28 +490,26 @@ void TextRender::render_text(int px, int py, const wchar_t* chs, int len,int max
 			return;
 
 		int draw_px = x + node->offx;
-		int draw_py = y + node->offy;
+		int draw_py = y - node->offy;
 
-		RBVector2 lb = cam->screen_to_ndc(RBVector2I(draw_px, cam->window_h-draw_py));
-		RBVector2 lt = cam->screen_to_ndc(RBVector2I(draw_px, cam->window_h - draw_py - node->text_height));
-		RBVector2 rt = cam->screen_to_ndc(RBVector2I(draw_px + node->text_width, cam->window_h - draw_py - node->text_height));
-		RBVector2 rb = cam->screen_to_ndc(RBVector2I(draw_px + node->text_width, cam->window_h - draw_py));
+		RBVector2 lb = cam->screen_to_ndc(RBVector2I(draw_px, draw_py+ text_h));
+		RBVector2 lt = cam->screen_to_ndc(RBVector2I(draw_px, draw_py - node->text_height+ text_h));
+		RBVector2 rt = cam->screen_to_ndc(RBVector2I(draw_px + node->text_width,  draw_py - node->text_height+ text_h));
+		RBVector2 rb = cam->screen_to_ndc(RBVector2I(draw_px + node->text_width,  draw_py+ text_h));
 
 		f32 iw = 1.f / cache_w;
 		f32 ih = 1.f / cache_h;
-
 
 		f32 tx = node->texture_x*iw;;
 		f32 ty = node->texture_y*ih;
 		f32 tw = node->text_width*iw;
 		f32 th = node->text_height*ih;
 
-
 		f32 vert[] = {
-			lb.x, lb.y, tx, ty +th,//lb
+			lb.x, lb.y, tx, ty + th,//lb
 			lt.x, lt.y, tx, ty ,//lt
-			rt.x, rt.y, tx + tw, ty  ,//rt
-			rb.x, rb.y, tx + tw, ty +th//rb
+			rt.x, rt.y, tx + tw, ty , //rt
+			rb.x, rb.y, tx + tw, ty + th //rb
 		};
 
 		x += node->text_advance;
@@ -547,9 +546,9 @@ void TextRender::render(const WIPCamera* cam)
 	_pack_index(p, text_to_render);
 	g_rhi->unlock_index_buffer(ib);
 
-	g_rhi->disable_depth_test();
-	g_rhi->enable_blend();
-	g_rhi->set_blend_function();
+	//g_rhi->disable_depth_test();
+	//g_rhi->enable_blend();
+	//g_rhi->set_blend_function();
 	g_rhi->set_shader(bound_shader);
 	g_rhi->set_index_buffer(ib);
 	g_rhi->set_vertex_buffer(vb);
@@ -558,21 +557,36 @@ void TextRender::render(const WIPCamera* cam)
 	g_rhi->set_uniform4f("in_color", RBColorf::white);
 	g_rhi->draw_triangles(6*text_to_render, 0);
 
-	g_rhi->enable_depth_test();
+	//g_rhi->enable_depth_test();
 	texture_change = false;
 	text_to_render = 0;
 }
 
 
 
-void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex)
+void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex, bool flip)
 {
 	f32 draw_px = px;
 	f32 draw_py = py;
-	RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
-	RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
-	RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
-	RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+
+	RBVector2 lb; 
+	RBVector2 lt; 
+	RBVector2 rt; 
+	RBVector2 rb; 
+	if (flip)
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+	}
+	else
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px,  draw_py + h));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + w,  draw_py + h));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + w,  draw_py));
+	}
 
 	f32 vert[] = {
 		lb.x, lb.y, 0, 0,//lb
@@ -584,9 +598,9 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex)
 	memcpy(p, vert, sizeof(f32) * 16);
 	g_rhi->unlock_vertex_buffer(vb);
 
-	g_rhi->disable_depth_test();
-	g_rhi->enable_blend();
-	g_rhi->set_blend_function();
+	//g_rhi->disable_depth_test();
+	//g_rhi->enable_blend();
+	//g_rhi->set_blend_function();
 	g_rhi->set_shader(bound_shader_pic);
 	g_rhi->set_index_buffer(ib);
 	g_rhi->set_vertex_buffer(vb);
@@ -595,17 +609,87 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex)
 	g_rhi->set_uniform4f("in_color", RBColorf::white);
 	g_rhi->draw_triangles(6, 0);
 
-	g_rhi->enable_depth_test();
+	//g_rhi->enable_depth_test();
 }
 
-void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex)
+//right coordnate!
+void UIRender::render_subpic(int px, int py, int w, int h, int subx, int suby, int subw, int subh, const WIPTexture2D * tex, bool flip)
 {
 	f32 draw_px = px;
 	f32 draw_py = py;
-	RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
-	RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
-	RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
-	RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+
+	RBVector2 lb;
+	RBVector2 lt;
+	RBVector2 rt;
+	RBVector2 rb;
+	if (flip)
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - subh));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + subw, camera->window_h - draw_py - subh));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + subw, camera->window_h - draw_py));
+	}
+	else
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px, draw_py + subh));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + subw, draw_py + subh));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + subw, draw_py));
+	}
+
+	f32 fx = subx / (f32)w;
+	f32 fy = suby / (f32)h;
+	f32 fxa = (subx + subw) / (f32)w;
+	f32 fya = (suby + subh) / (f32)h;
+
+
+	
+	f32 vert[] = {
+		lb.x, lb.y, fx, fy,//lb
+		lt.x, lt.y, fx, fya,//lt
+		rt.x, rt.y, fxa, fya,//rt
+		rb.x, rb.y, fxa, fy//rb
+	};
+	void* p = g_rhi->lock_vertex_buffer(vb);
+	memcpy(p, vert, sizeof(f32) * 16);
+	g_rhi->unlock_vertex_buffer(vb);
+
+	//g_rhi->disable_depth_test();
+	//g_rhi->enable_blend();
+	//g_rhi->set_blend_function();
+	g_rhi->set_shader(bound_shader_pic);
+	g_rhi->set_index_buffer(ib);
+	g_rhi->set_vertex_buffer(vb);
+	g_rhi->set_vertex_format(vf);
+	g_rhi->set_uniform_texture("in_texture", 0, tex);
+	g_rhi->set_uniform4f("in_color", RBColorf::white);
+	g_rhi->draw_triangles(6, 0);
+
+	//g_rhi->enable_depth_test();
+}
+
+void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, bool flip)
+{
+	f32 draw_px = px;
+	f32 draw_py = py;
+	RBVector2 lb;
+	RBVector2 lt;
+	RBVector2 rt;
+	RBVector2 rb;
+	if (flip)
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+	}
+	else
+	{
+		lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+		lt = camera->screen_to_ndc(RBVector2I(draw_px, draw_py +h));
+		rt = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py + h));
+		rb = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py));
+	}
 
 	f32 vert[] = {
 		lb.x, lb.y, 0, 0,//lb
@@ -617,9 +701,9 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D
 	memcpy(p, vert, sizeof(f32) * 16);
 	g_rhi->unlock_vertex_buffer(vb);
 
-	g_rhi->disable_depth_test();
-	g_rhi->enable_blend();
-	g_rhi->set_blend_function();
+	//g_rhi->disable_depth_test();
+	//g_rhi->enable_blend();
+	//g_rhi->set_blend_function();
 	g_rhi->set_shader(bound_shader_pic);
 	g_rhi->set_index_buffer(ib);
 	g_rhi->set_vertex_buffer(vb);
@@ -628,31 +712,45 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D
 	g_rhi->set_uniform4f("in_color", RBColorf::white);
 	g_rhi->draw_triangles(6, 0);
 
-	g_rhi->enable_depth_test();
+	//g_rhi->enable_depth_test();
 }
 
-void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex, const RBColorf& c)
+void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex, const RBColorf& c, bool flip)
 {
   f32 draw_px = px;
   f32 draw_py = py;
-  RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
-  RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
-  RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
-  RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+  RBVector2 lb;
+  RBVector2 lt;
+  RBVector2 rt;
+  RBVector2 rb;
+  if (flip)
+  {
+	  lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
+	  lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
+	  rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
+	  rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+  }
+  else
+  {
+	  lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+	  lt = camera->screen_to_ndc(RBVector2I(draw_px, draw_py + h));
+	  rt = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py + h));
+	  rb = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py));
+  }
 
   f32 vert[] = {
-    lb.x, lb.y, 0, 0,//lb
-    lt.x, lt.y, 0, 1,//lt
-    rt.x, rt.y, 1, 1,//rt
-    rb.x, rb.y, 1, 0//rb
+		lb.x, lb.y, 0, 0,//lb
+		lt.x, lt.y, 0, 1,//lt
+		rt.x, rt.y, 1, 1,//rt
+		rb.x, rb.y, 1, 0//rb
   };
   void* p = g_rhi->lock_vertex_buffer(vb);
   memcpy(p, vert, sizeof(f32) * 16);
   g_rhi->unlock_vertex_buffer(vb);
 
-  g_rhi->disable_depth_test();
-  g_rhi->enable_blend();
-  g_rhi->set_blend_function();
+  //g_rhi->disable_depth_test();
+  //g_rhi->enable_blend();
+  //g_rhi->set_blend_function();
   g_rhi->set_shader(bound_shader_pic);
   g_rhi->set_index_buffer(ib);
   g_rhi->set_vertex_buffer(vb);
@@ -661,31 +759,45 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPTexture2D* tex,
   g_rhi->set_uniform4f("in_color", c);
   g_rhi->draw_triangles(6, 0);
 
-  g_rhi->enable_depth_test();
+  //g_rhi->enable_depth_test();
 }
 
-void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, const RBColorf& c)
+void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, const RBColorf& c, bool flip)
 {
   f32 draw_px = px;
   f32 draw_py = py;
-  RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
-  RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
-  RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
-  RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+  RBVector2 lb;
+  RBVector2 lt;
+  RBVector2 rt;
+  RBVector2 rb;
+  if (flip)
+  {
+	  lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
+	  lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
+	  rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
+	  rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+  }
+  else
+  {
+	  lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+	  lt = camera->screen_to_ndc(RBVector2I(draw_px, draw_py + h));
+	  rt = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py + h));
+	  rb = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py));
+  }
 
   f32 vert[] = {
-    lb.x, lb.y, 0, 0,//lb
-    lt.x, lt.y, 0, 1,//lt
-    rt.x, rt.y, 1, 1,//rt
-    rb.x, rb.y, 1, 0//rb
+		lb.x, lb.y, 0, 0,//lb
+		lt.x, lt.y, 0, 1,//lt
+		rt.x, rt.y, 1, 1,//rt
+		rb.x, rb.y, 1, 0//rb
   };
   void* p = g_rhi->lock_vertex_buffer(vb);
   memcpy(p, vert, sizeof(f32) * 16);
   g_rhi->unlock_vertex_buffer(vb);
 
-  g_rhi->disable_depth_test();
-  g_rhi->enable_blend();
-  g_rhi->set_blend_function();
+  //g_rhi->disable_depth_test();
+  //g_rhi->enable_blend();
+  //g_rhi->set_blend_function();
   g_rhi->set_shader(bound_shader_pic);
   g_rhi->set_index_buffer(ib);
   g_rhi->set_vertex_buffer(vb);
@@ -694,7 +806,7 @@ void UIRender::render_pic(int px, int py, int w, int h, const WIPRenderTexture2D
   g_rhi->set_uniform4f("in_color", c);
   g_rhi->draw_triangles(6, 0);
 
-  g_rhi->enable_depth_test();
+  //g_rhi->enable_depth_test();
 }
 
 
@@ -786,8 +898,8 @@ void LargeTexture_TextRender::render(const WIPCamera* cam)
 	_pack_index(p, text_to_render);
 	g_rhi->unlock_index_buffer(ib);
 
-	g_rhi->disable_depth_test();
-	g_rhi->enable_blend();
+	//g_rhi->disable_depth_test();
+	//g_rhi->enable_blend();
 	g_rhi->set_blend_function();
 	g_rhi->set_shader(bound_shader);
 	g_rhi->set_index_buffer(ib);
@@ -797,8 +909,47 @@ void LargeTexture_TextRender::render(const WIPCamera* cam)
 	g_rhi->set_uniform4f("in_color", RBColorf::white);
 	g_rhi->draw_triangles(6 * text_to_render, 0);
 
-	g_rhi->enable_depth_test();
+	//g_rhi->enable_depth_test();
 	text_to_render = 0;
+}
+
+//#include "Input.h"
+
+void TempUISys::render()
+{
+	
+		if (!render_texture2d)
+			return;
+		g_rhi->change_viewport(ui_renderer->camera->viewport);
+		begin();
+		text_renderer->render(target_cam_ref);
+		end();
+		g_rhi->enable_blend();
+		g_rhi->disable_depth_test();
+		ui_renderer->render_pic(0, 0, render_texture2d->get_width(), render_texture2d->get_height(), render_texture2d);
+		//g_rhi->enable_depth_test();
+		//g_rhi->enable_blend();
+
+		if (should_clear)
+		{
+			g_rhi->set_back_buffer(render_texture2d);
+			g_rhi->set_depth_write(true);
+			g_rhi->clear_back_buffer();
+			g_rhi->set_main_back_buffer();
+			should_clear = false;
+		}
+		
+		/*
+		static WIPTexture2D* mouse_pic = nullptr;
+		static WIPTexture2D* end_tex = nullptr;
+		if (!end_tex)
+			end_tex = load_texture("swdui/title_bg.png");
+		g_temp_uisys->draw_picture(0, 0, end_tex->get_width(), end_tex->get_height(), end_tex);
+		if (!mouse_pic)
+			mouse_pic = load_texture("swdui/947-1.png");
+		ui_renderer->render_subpic(Input::get_mouse_x(), Input::get_mouse_y(), mouse_pic->get_width(), mouse_pic->get_height(), 0, 0, 42, 42, mouse_pic);
+		
+		*/
 }
 
 TempUISys* g_temp_uisys = TempUISys::instance();

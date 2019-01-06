@@ -336,6 +336,11 @@ WIPViewPort* GLDynamicRHI::change_viewport(WIPViewPort* viewport)
 	return old;
 }
 
+void GLDynamicRHI::change_viewport(int x, int y, int w, int h)
+{
+	glViewport(x, y, w, h);
+}
+
 void GLDynamicRHI::set_back_buffer(const WIPRenderTexture2D* render_texture) const
 {
 	GLRenderTexture2D::GLRenderTexture2DRHI* rhires = (GLRenderTexture2D::GLRenderTexture2DRHI*)render_texture->get_rhi_resource();
@@ -352,6 +357,9 @@ void GLDynamicRHI::clear_back_buffer(const RBColorf& c) const
 {
 	glClearColor(c.r, c.g, c.b, c.a);
 	glClear(GL_COLOR_BUFFER_BIT);
+	glClearDepth(1);
+	glClearStencil(0);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT| GL_STENCIL_BUFFER_BIT);
 }
 
 void GLDynamicRHI::set_uniform4f(const char* uniform_name, const RBColorf& color)
@@ -692,7 +700,39 @@ void GLDynamicRHI::disable_blend() const
 
 void GLDynamicRHI::set_blend_function() const
 {
-	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glBlendFuncSeparate(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA, GL_ONE,GL_ONE);
+}
+
+void GLDynamicRHI::enable_stencil_test() const
+{
+	glEnable(GL_STENCIL_TEST);
+}
+
+void GLDynamicRHI::disable_stencil_test() const
+{
+	glDisable(GL_STENCIL_TEST);
+}
+
+void GLDynamicRHI::set_stencil_write(bool val)
+{
+	if (val)
+	{
+		glStencilFunc(GL_NEVER, 0x0, 0x0);
+		glStencilOp(GL_INCR, GL_INCR, GL_INCR);
+		glStencilMask(0xFF);
+	}
+	else
+	{
+		glStencilMask(0x00);
+		glStencilFunc(GL_NOTEQUAL, 0x1, 0x1);
+		glStencilOp(GL_KEEP, GL_KEEP, GL_KEEP);
+	}
+}
+
+void GLDynamicRHI::set_stebcil_function()
+{
+	glStencilFunc(GL_EQUAL, 1, 0xFF);
 }
 
 

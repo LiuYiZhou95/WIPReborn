@@ -17,7 +17,7 @@ public:
 
 	b2PolygonShape* create_polygon();
 	b2Body* create_body(b2BodyType tp);
-
+	void set_debug_draw(bool i) { draw_debug_data = i; }
 	void delete_body(b2Body* b);
 
 	bool startup();
@@ -53,7 +53,7 @@ private:
 	i32 velocityIterations, positionIterations;
 	WIPBox2dDebugDraw debug_draw;
 	WIPBox2dSpriteContactListener contact_listener;
-	
+	bool draw_debug_data;
 };
 
 extern WIPPhysicsManager* g_physics_manager;

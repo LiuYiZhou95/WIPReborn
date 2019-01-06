@@ -3,6 +3,7 @@
 #include "FrameBox.h"
 #include "RBMath/Inc/RBMath.h"
 
+#include "Render.h"
 
 
 //WIPAnimationManager* WIPAnimationManager::_instance = 0;
@@ -186,3 +187,67 @@ WIPAnimationManager::~WIPAnimationManager()
 
 //WIPAnimationManager* g_animation_manager = WIPAnimationManager::instance();
 
+WIPFrameAnimationPlayer * WIPFrameAnimationPlayer::instance()
+{
+	static WIPFrameAnimationPlayer* _instance;
+	if (!_instance)
+		_instance = new WIPFrameAnimationPlayer();
+	return _instance;
+}
+
+
+bool WIPFrameAnimationPlayer::startup(int dis_x,int dis_y,int displayw, int displayh)
+{
+	_dis_x = dis_x; _dis_y = dis_y;
+	_displayw = displayw; _displayh = displayh;
+	_used = true;
+
+	return true;
+}
+
+void WIPFrameAnimationPlayer::shutdown()
+{
+}
+
+//add-hoc
+#include "GLFWApp.h"
+
+bool WIPFrameAnimationPlayer::update(f32 dt)
+{
+	if (!_playing_clip) return true;
+	_playing_clip->_cur_dt += dt * _playing_clip->_speed;
+	//LOG_INFO("%f\n", _playing_clip->_cur_dt);
+	if (RBMath::abs(_playing_clip->_cur_dt) >= _delta_t + 0.001)
+	{
+		_playing_clip->_cur_dt = 0.f;
+		//from 0 begin
+		if (++_playing_clip->_cur_frame>=_playing_clip->_total_frame)
+		{
+			_playing_clip->_cur_frame = 0;
+			_playing_clip->bplaying = false;
+			return true;
+		}
+	}
+	g_temp_uisys->begin();
+	g_temp_uisys->clear();
+	g_temp_uisys->draw_picture(0, 0, _displayw, _displayh, _playing_clip->_textures[_playing_clip->_cur_frame]);
+	g_temp_uisys->end();
+	//g_rhi->clear_back_buffer();
+	
+
+	//g_app->swap();
+	return false;
+}
+
+#include "WIPTime.h"
+
+void WIPFrameAnimationPlayer::play_clip(WIPFrameAnimationClip * clip)
+{
+	if (!_used)
+	{
+		LOG_ERROR("Not init!");
+		return;
+	}
+	if (_playing_clip&& _playing_clip->bplaying) return;
+	_playing_clip = clip;
+}

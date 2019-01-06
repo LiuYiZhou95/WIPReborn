@@ -19,6 +19,7 @@ WIPCamera::WIPCamera(f32 w, f32 h, f32 px, f32 py, f32 sw, f32 sh, int iww, int 
 	window_h = iwh;
 	window_w = iww;
 	viewport = g_rhi->RHICreateViewPort(px, py, sw, sh);
+	
 }
 
 WIPCamera::~WIPCamera()
@@ -44,6 +45,7 @@ RBVector2 WIPCamera::world_to_camera(const RBVector2& world_pos) const
 
 RBVector2 WIPCamera::screen_to_world(const RBVector2I& screen_pos) const
 {
+	return camera_to_world(ndc_to_camera(screen_to_ndc(screen_pos)));
 	int x = screen_pos.x;
 	int y = window_h - screen_pos.y;
 	f32 ndcx = (x - viewport->x)*2.f/viewport->w-1.f;
@@ -55,6 +57,7 @@ RBVector2 WIPCamera::screen_to_world(const RBVector2I& screen_pos) const
 
 RBVector2I WIPCamera::world_to_screen(const RBVector2 & world_pos) const
 {
+	return ndc_to_screen(camera_to_ndc(world_to_camera(world_pos)));
 	RBVector2 newp = world_pos - RBVector2(world_x, world_y);
 	f32 w1 = world_w*0.5f*_zoom;
 	f32 w2 = world_h*0.5f*_zoom;
@@ -66,6 +69,7 @@ RBVector2I WIPCamera::world_to_screen(const RBVector2 & world_pos) const
 
 RBVector2 WIPCamera::screen_to_camera(const RBVector2I& screen_pos) const
 {
+	return ndc_to_camera(screen_to_ndc(screen_pos));
 	int x = screen_pos.x;
 	int y = window_h - screen_pos.y;
 	f32 ndcx = (x - viewport->x)*2.f / viewport->w - 1.f;
@@ -75,14 +79,41 @@ RBVector2 WIPCamera::screen_to_camera(const RBVector2I& screen_pos) const
 	return RBVector2(ndcx*w1, ndcy*w2);
 }
 
+RBVector2 WIPCamera::camera_to_ndc(const RBVector2 & cam_pos) const
+{
+	f32 w1 = world_w * 0.5f*_zoom;
+	f32 w2 = world_h * 0.5f*_zoom;
+	return RBVector2(cam_pos.x / w1, cam_pos.y / w2);
+}
+
+RBVector2 WIPCamera::ndc_to_camera(const RBVector2 & ndc_pos) const
+{
+	f32 w1 = world_w * 0.5f*_zoom;
+	f32 w2 = world_h * 0.5f*_zoom;
+	return ndc_pos*RBVector2(w1,w2);
+}
+
 RBVector2 WIPCamera::screen_to_ndc(const RBVector2I& screen_pos) const
 {
 #ifndef USE_D3D
-	int x = screen_pos.x;
-	int y = window_h - screen_pos.y;
-	f32 ndcx = (x - viewport->x)*2.f / viewport->w - 1.f;
-	f32 ndcy = (y - viewport->y)*2.f / viewport->h - 1.f;
+	//auto* viewport = g_rhi->get_active_viewport();
+	int x = screen_pos.x ;
+	//ndc ori is on the left down
+	//viewport ori left down
+	int y = window_h -  screen_pos.y;
+	f32 ndcx = (x)*2.f / window_w - 1.f;
+	f32 ndcy = (y)*2.f / window_h - 1.f;
 	return RBVector2(ndcx, ndcy);
+#endif
+}
+
+RBVector2I WIPCamera::ndc_to_screen(const RBVector2 & ndc_pos) const
+{
+#ifndef USE_D3D
+	f32 x = (ndc_pos.x+1.f)*window_w*0.5f;
+	f32 y = (ndc_pos.y+1.f)*window_h*0.5f;
+	y = window_h - y;
+	return RBVector2I(x+0.5f,y+0.5f);
 #endif
 }
 

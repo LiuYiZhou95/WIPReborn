@@ -5,9 +5,10 @@
 #include "IniHelper.h"
 #include "Logger.h"
 #include "Sprite.h"
+#include "RenderResource.h"
 
 //tansform coord to lb
-bool read_animation_atlas_file(const char* file_name,int& total_frame,float **out_uvs,std::string& texture_name)
+bool read_animation_atlas_file(const char* file_name,int& total_frame,float **out_uvs,std::string& texture_name,bool flip=true)
 {
 	bool ret = true;
 	auto text_handler = g_res_manager->load_resource(file_name,WIPResourceType::TEXT);
@@ -40,10 +41,13 @@ bool read_animation_atlas_file(const char* file_name,int& total_frame,float **ou
 		WIPIniHelper::get_float(s,"rb_y",(*out_uvs)[i*8+5]);
 		WIPIniHelper::get_float(s,"rt_x",(*out_uvs)[i*8+6]);
 		WIPIniHelper::get_float(s,"rt_y",(*out_uvs)[i*8+7]);
-		(*out_uvs)[i * 8 + 1] = 1 - (*out_uvs)[i * 8 + 1];
-		(*out_uvs)[i * 8 + 3] = 1 - (*out_uvs)[i * 8 + 3];
-		(*out_uvs)[i * 8 + 5] = 1 - (*out_uvs)[i * 8 + 5];
-		(*out_uvs)[i * 8 + 7] = 1 - (*out_uvs)[i * 8 + 7];
+		if (flip)
+		{
+			(*out_uvs)[i * 8 + 1] = 1 - (*out_uvs)[i * 8 + 1];
+			(*out_uvs)[i * 8 + 3] = 1 - (*out_uvs)[i * 8 + 3];
+			(*out_uvs)[i * 8 + 5] = 1 - (*out_uvs)[i * 8 + 5];
+			(*out_uvs)[i * 8 + 7] = 1 - (*out_uvs)[i * 8 + 7];
+		}
 		f32 temp = (*out_uvs)[i * 8 + 1];
 		(*out_uvs)[i * 8 + 1] = (*out_uvs)[i * 8 + 3];
 		(*out_uvs)[i * 8 + 3] = temp;
@@ -71,11 +75,11 @@ WIPAnimationClip::WIPAnimationClip(const char* name,bool loop)
 }
 
 
-WIPAnimationClip* WIPAnimationClip::create_with_atlas(const char* name,const char* atlas_file)
+WIPAnimationClip* WIPAnimationClip::create_with_atlas(const char* name, const char* atlas_file, bool flip)
 {
 	std::string texture_name;
 	WIPAnimationClip* ret= new WIPAnimationClip(name,false);
-	if(!read_animation_atlas_file(atlas_file,ret->_total_frame,&ret->_uvs,texture_name))
+	if(!read_animation_atlas_file(atlas_file,ret->_total_frame,&ret->_uvs,texture_name,flip))
 	{
 		delete ret;
 		return 0;
@@ -101,4 +105,28 @@ WIPClipInstance::WIPClipInstance(WIPFrameBox* fb, const WIPAnimationClip* clip)
 	stop_now = false;
 	cb = nullptr;
 	obj_ref = nullptr;
+}
+static WIPTexture2D* load_texture(const char* name)
+{
+	auto res_handle2 = g_res_manager->load_resource(name, WIPResourceType::TEXTURE);
+	int ww1 = ((TextureData *)(res_handle2->extra))->width;
+	int hh1 = ((TextureData *)(res_handle2->extra))->height;
+	auto *tex2d1 = g_rhi->RHICreateTexture2D(ww1, hh1, res_handle2->ptr);
+	return tex2d1;
+}
+WIPFrameAnimationClip * WIPFrameAnimationClip::create(std::vector<std::string>& names,const char* name, bool flip)
+{
+	auto* obj = new WIPFrameAnimationClip();
+	for (auto t : names)
+	{
+		obj->_textures.push_back(load_texture(t.data()));
+	}
+	obj->bplaying = false;
+	obj->bloop = false;
+	obj->name = name;
+	obj->_total_frame = obj->_textures.size();
+	obj->_speed = 1.f;
+	obj->_cur_dt = 0.f;
+	obj->_cur_frame = 0;
+	return obj;
 }

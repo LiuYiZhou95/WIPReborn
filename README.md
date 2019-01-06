@@ -1,42 +1,31 @@
+# WIP
+
+这是一个以自娱自乐开心就好为目的玩具2D游戏引擎，他不仅没有设计，没有可用性，没有执行效率，没有编程规范，就连代码也来自于胡编乱造和东抄西抄.但它一直处于缓慢完善和进步中.
+开发者是一个编程初学者没有任何游戏开发经验，写这个东西的目的在于体验游戏开发开荒的过程.欢迎批评指点吐槽.
+
 # 重构[WIP](https://github.com/wubugui/WIP)
 
--  彻底重写渲染系统
--  重写应用类
--  精简帧动画
--  重写场景管理
--  添加必要的系统：文件系统等
--  增强可拓展性
--  支持linux
--  采用CMAKE构建
+-  彻底重写
 -  添加基本的Game Play框架
+-  Game驱动的Engine开发
 
 # TODO
 
--  修改SoftR并代替OpenGL成为RHI
--  ~重制JavaTank~
+-  资源管理系统
+-  内存优化
+-  完善动画系统(状态机，动画资源管理)
+-  性能优化
+-  其他RHI
+-  完善的关卡编辑器
 -  粒子系统
 -  角色阴影
--  ~反射系统~
--  ~事件驱动Object重构，消除各级Update~
--  事件驱动UI
--  以事件驱动方式封装IMGUI
--  ~内存，智能指针~
--  完善动画系统(~帧动画~，状态机，transform动画，动画事件等)
--  Profile与性能优化
--  D3D11支持
--  基本编辑器
--  RPG游戏实例
--  ~高效Text渲染~
--  ~脚本系统~
--  ~物理(已经初步集成Box2D)~
--  ~声音(FMOD)~
--  ~嵌入IMGUI~
+-  修改SoftR并代替OpenGL成为RHI
 
-# 编译
+# 游戏
 
--  参考[FindingDogs](https://github.com/wubugui/FindingDogs)进行编译
+-  [FindingDogs](https://github.com/FingingDogs/FindingDogs)
 
-# Demo
+# 演示
 
 -  [A simple AVG game demo](https://github.com/wubugui/WIPReborn/releases/download/v1.0/bin.zip)
 -  WASD移动，空格交互
@@ -47,6 +36,10 @@
 
 ![](https://github.com/wubugui/WIPReborn/raw/master/example/1.png)
 ![](https://github.com/wubugui/FXXKTracer/raw/master/pic/ll.gif)
+![](https://github.com/wubugui/FXXKTracer/raw/master/FDGame/game1.png)
+![](https://github.com/wubugui/FXXKTracer/raw/master/FDGame/game2.png)
+![](https://github.com/wubugui/FXXKTracer/raw/master/FDGame/editor1.png)
+![](https://github.com/wubugui/FXXKTracer/raw/master/FDGame/menu.png)
 
 # 视频
 

@@ -48,7 +48,11 @@ public:
 	RBVector2 screen_to_world(const RBVector2I& screen_pos) const;
 	RBVector2I world_to_screen(const RBVector2& world_pos) const;
 	RBVector2 screen_to_camera(const RBVector2I& screen_pos) const;
+	RBVector2 camera_to_ndc(const RBVector2& cam_pos) const;
+	RBVector2 ndc_to_camera(const RBVector2& ndc_pos) const;
+	//screen to ndc not camera to ndc
 	RBVector2 screen_to_ndc(const RBVector2I& screen_pos) const;
+	RBVector2I ndc_to_screen(const RBVector2& ndc_pos) const;
 	void set_background_color(const WIPColorf& color);
 	void move(f32 x,f32 y);
 	void move_to(f32 x,f32 y);

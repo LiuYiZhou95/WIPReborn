@@ -23,3 +23,4 @@ WIPScene* g_scene=nullptr;
 WIPPhysicsManager* g_physics_manager=nullptr;
 WIPScriptManager* g_script_manager=nullptr;
 WIPDynamicRHI *g_rhi=nullptr;
+WIPFrameAnimationPlayer* g_frame_player = nullptr;

@@ -29,9 +29,9 @@ public:
   ~GLFWApp();
 
   virtual bool init();
-
+  void swap();
   virtual void run();
-
+  void set_cursor_state(bool enable);
   bool init_gl(const char *title, int width, int height);
   bool create_window(const char *title)
   {
@@ -47,6 +47,7 @@ public:
     glfwSetScrollCallback(window, glfw_scroll_callback);
     glfwSetCharCallback(window, glfw_char_callback);
     glfwGetWindowSize(window, &window_w, &window_h);
+	
     return true;
   }
   inline void require_exit()

@@ -126,6 +126,15 @@ void WIPResourceManager::free_resource(ResHandler* handler)
 {
 	switch (handler->type)
 	{
+	case WTEXT:
+	{
+		if (TextData::E_WSTRING == ((TextData *)handler->extra)->conten_type)
+		{
+			delete (std::wstring*)handler->ptr;
+		}
+		delete (TextData *)handler->extra;
+		break;
+	}
 	case TEXT:
 	{
 		if (TextData::E_STRING == ((TextData *)handler->extra)->conten_type)
@@ -158,13 +167,55 @@ void WIPResourceManager::free_resource(ResHandler* handler)
 	}
 	delete_handler(handler);
 }
-
+#include <codecvt>
 //!!!be sure to release memory before return null
 ResHandler* WIPResourceManager::alloc(const char* filename, WIPResourceType type)
 {
 	ResHandler* res = new ResHandler;
 	switch (type)
 	{
+	case WTEXT:
+	{
+		//const std::locale empty_locale = std::locale::;
+		//typedef std::codecvt_utf8<wchar_t> converter_type;  //std::codecvt_utf16
+		//const converter_type* converter = new converter_type;
+		//const std::locale utf8_locale = std::locale(empty_locale, converter);
+
+		std::locale china("chs");
+		TextData *data = new TextData;
+		data->conten_type = TextData::E_WSTRING;
+		std::wifstream wfile; 
+		wfile.open(filename, std::ios::in);
+		wfile.imbue(china);
+		if (!wfile.is_open())
+		{
+			printf("[fatal error]: \"%s\" load error!\n", filename);
+			delete data;
+			delete_handler(res);
+			return NULL;
+		}
+		std::wstring* string = new std::wstring(L"");
+		wchar_t sl[1024];
+		while (!wfile.eof())
+		{
+			wfile.getline(sl, 1024);
+			*string += std::wstring(sl);
+			*string += '\n';
+		}
+		wfile.close();
+
+		res->file_name = filename;
+		res->type = WTEXT;
+		res->extra = data;
+		res->nref = 1;
+		res->ptr = string;
+		res->size = string->size();
+
+		_map[filename] = res;
+
+		return res;
+		break;
+	}
 	case TEXT:
 	{
 		TextData *data = new TextData;

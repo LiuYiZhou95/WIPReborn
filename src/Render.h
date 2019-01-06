@@ -48,6 +48,10 @@ public:
 	virtual void post_init(){}
 	virtual void shutdown() = 0;
 
+	inline WIPViewPort* get_active_viewport()
+	{
+		return _active_view_port;
+	}
 
 	virtual WIPTexture2D* RHICreateTexture2D(uint32 SizeX, uint32 SizeY,  void* data,uint8 Format=0, uint32 NumMips=0, uint32 NumSamples=0, uint32 Flags=0) = 0;
 	virtual WIPRenderTexture2D* RHICreateRenderTexture2D(uint32 SizeX, uint32 SizeY, const RBColorf& data, uint8 Format = 0,
@@ -68,6 +72,8 @@ public:
 	virtual WIPViewPort* RHICreateViewPort(int x, int y, int w, int h) = 0;
 
 	virtual WIPViewPort* change_viewport(WIPViewPort* viewport) = 0;
+	virtual void change_viewport(int x,int y,int w,int h) = 0;
+
 	virtual void set_back_buffer(const WIPRenderTexture2D* render_texture) const = 0;
 	virtual void set_main_back_buffer() const = 0;
 	virtual void clear_back_buffer(const RBColorf& c=RBColorf::blank) const = 0;
@@ -85,6 +91,11 @@ public:
 	virtual void enable_blend() const=0;
 	virtual void disable_blend() const = 0;
 	virtual void set_blend_function() const = 0;
+
+	virtual void enable_stencil_test()const = 0;
+	virtual void disable_stencil_test()const = 0;
+	virtual void set_stencil_write(bool val) = 0;
+	virtual void set_stebcil_function() = 0;
 
 	virtual bool begin_debug_context() = 0;
 	virtual void change_debug_color(const RBColorf& color) = 0;
@@ -115,6 +126,7 @@ public:
 class UIRender :public WIPRender
 {
 public:
+	//use its own camera
 	virtual void init(const WIPCamera* cam)
 	{
 		camera = cam;
@@ -139,6 +151,8 @@ public:
 		TextureData* td = (TextureData*)reh->extra;
 		dialog_tex = g_rhi->RHICreateTexture2D(td->width, td->height, reh->ptr);
 		g_res_manager->free(reh, reh->size);
+
+		
 	}
 
 	virtual void render(const WIPCamera* cam)
@@ -149,10 +163,10 @@ public:
 	{
 		f32 draw_px = px;
 		f32 draw_py = py;
-		RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py));
-		RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, camera->window_h - draw_py - h));
-		RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py - h));
-		RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, camera->window_h - draw_py));
+		RBVector2 lb = camera->screen_to_ndc(RBVector2I(draw_px, draw_py));
+		RBVector2 lt = camera->screen_to_ndc(RBVector2I(draw_px, draw_py + h));
+		RBVector2 rt = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py + h));
+		RBVector2 rb = camera->screen_to_ndc(RBVector2I(draw_px + w, draw_py));
 
 		f32 vert[] = {
 			lb.x, lb.y, 0.5, 0.5,//lb
@@ -163,9 +177,9 @@ public:
 		void* p = g_rhi->lock_vertex_buffer(vb);
 		memcpy(p, vert, sizeof(f32) * 16);
 		g_rhi->unlock_vertex_buffer(vb);
-		g_rhi->disable_depth_test();
-		g_rhi->enable_blend();
-		g_rhi->set_blend_function();
+		//g_rhi->disable_depth_test();
+		//g_rhi->enable_blend();
+		//g_rhi->set_blend_function();
 		g_rhi->set_shader(bound_shader_dialog_box);
 		g_rhi->set_index_buffer(ib);
 		g_rhi->set_vertex_buffer(vb);
@@ -174,7 +188,7 @@ public:
 		g_rhi->set_uniform4f("in_color", c);
 		g_rhi->draw_triangles(6, 0);
 
-		g_rhi->enable_depth_test();
+		//g_rhi->enable_depth_test();
 	}
 	void render_box(int px, int py, int w, int h, const RBColorf& c)
 	{
@@ -202,9 +216,9 @@ public:
 		void* p = g_rhi->lock_vertex_buffer(vb);
 		memcpy(p, vert, sizeof(f32) * 16);
 		g_rhi->unlock_vertex_buffer(vb);
-		g_rhi->disable_depth_test();
-		g_rhi->enable_blend();
-		g_rhi->set_blend_function();
+		//g_rhi->disable_depth_test();
+		//g_rhi->enable_blend();
+		//g_rhi->set_blend_function();
 		g_rhi->set_shader(bound_shader);
 		g_rhi->set_index_buffer(ib);
 		g_rhi->set_vertex_buffer(vb);
@@ -212,14 +226,16 @@ public:
 		g_rhi->set_uniform4f("in_color", c);
 		g_rhi->draw_triangles(6 , 0);
 
-		g_rhi->enable_depth_test();
+		//g_rhi->enable_depth_test();
 	}
 
-	void render_pic(int px, int py, int w, int h, const WIPTexture2D* tex);
-	void render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex);
+	void render_pic(int px, int py, int w, int h, const WIPTexture2D* tex,bool flip=false);
+	void render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, bool flip = false);
 
-  void render_pic(int px, int py, int w, int h, const WIPTexture2D* tex,const RBColorf& c);
-  void render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, const RBColorf& c);
+  void render_pic(int px, int py, int w, int h, const WIPTexture2D* tex,const RBColorf& c, bool flip = false);
+  void render_pic(int px, int py, int w, int h, const WIPRenderTexture2D* tex, const RBColorf& c, bool flip = false);
+
+  void render_subpic(int px, int py, int w, int h,int subx,int suby,int subw,int subh, const WIPTexture2D* tex, bool flip = false);
 
 	virtual void destroy()
 	{
@@ -233,6 +249,7 @@ public:
 	WIPBoundShader* bound_shader_dialog_box;
 	WIPBoundShader* bound_shader_pic;
 	WIPTexture2D* dialog_tex;
+	
 };
 
 class SimpleWorldRender : public WIPRender
@@ -679,7 +696,8 @@ public:
 	
 	}
 
-	void render_text(int px, int py, const wchar_t* chs, int len,int maxw, const WIPCamera* cam);
+	//lazy render text! if you want to render immediantly you must call this->render(cam) manually.
+	void render_text(int px, int py, const wchar_t* chs, int len,int maxw, const WIPCamera* cam,int padding_x=20);
 
 	virtual void render(const WIPCamera* cam);
 	void load_text(const wchar_t* chs,int len=3)
@@ -1658,11 +1676,20 @@ public:
 	{
 		should_clear = true;
 	}
-	void draw_picture(int px, int py, int w, int h, const WIPTexture2D* tex,const RBColorf& c=RBColorf::white)
+	void draw_sub_picture(int px, int py, int w, int h, int subx, int suby, int subw, int subh, const WIPTexture2D * tex, bool flip=false)
 	{
-		ui_renderer->render_pic(px,py,w,h,tex,c);
+		ui_renderer->render_subpic(px, py, w, h, subx, suby, subw, subh, tex, flip);
 	}
-	void draw_box(int px, int py, int w, int h, const RBColorf& c)
+	//use position in window! not camera!
+	void draw_picture(int px, int py, int w, int h, const WIPTexture2D* tex,const RBColorf& c=RBColorf::white,bool flip=false)
+	{
+		ui_renderer->render_pic(px,py,w,h,tex,c,flip);
+	}
+	void draw_picture(int px, int py, int w, int h, const WIPRenderTexture2D* tex, const RBColorf& c = RBColorf::white, bool flip = false)
+	{
+		ui_renderer->render_pic(px, py, w, h, tex, c, flip);
+	}
+	void draw_box(int px, int py, int w, int h, const RBColorf& c,bool flip=false)
 	{
 		ui_renderer->render_dialog_box(px,py,w,h,c);
 	}
@@ -1670,27 +1697,22 @@ public:
 	{
 		return text_renderer->get_length_pixel(chs);
 	}
-	void draw_text(int px, int py, const wchar_t* chs, int len, int maxw)
+	void draw_text(int px, int py, const wchar_t* chs, int len, int maxw,int padding_x=20)
 	{
-		text_renderer->render_text(px, py, chs, len, maxw, target_cam_ref);
-	}
-	void render()
-	{
-    if (!render_texture2d)
-      return;
-		begin();
+		text_renderer->render_text(px, py, chs, len, maxw, target_cam_ref, padding_x);
+		//force to render text
 		text_renderer->render(target_cam_ref);
-		end();
-		ui_renderer->render_pic(0, 0, render_texture2d->get_width(), render_texture2d->get_height(), render_texture2d);
-
-		if (should_clear)
-		{
-			g_rhi->set_back_buffer(render_texture2d);
-			g_rhi->clear_back_buffer();
-			g_rhi->set_main_back_buffer();
-			should_clear = false;
-		}
 	}
+	static WIPTexture2D* load_texture(const char* name)
+	{
+		auto res_handle2 = g_res_manager->load_resource(name, WIPResourceType::TEXTURE);
+		int ww1 = ((TextureData *)(res_handle2->extra))->width;
+		int hh1 = ((TextureData *)(res_handle2->extra))->height;
+		auto *tex2d1 = g_rhi->RHICreateTexture2D(ww1, hh1, res_handle2->ptr);
+		return tex2d1;
+	}
+
+	void render();
 	~TempUISys()
 	{
 		delete render_texture2d;

@@ -12,8 +12,6 @@
 
 //#define REPORT
 
-//TODO:内存存放位置的调整使得程序不那么别扭
-
 #define NEXT_NODE(p) *(void**)((size_t)p+single_size)
 
 #define NEW_NODE(single_size) (void*)(((size_t)allocate_aligned(sizeof(void*)+single_size)))

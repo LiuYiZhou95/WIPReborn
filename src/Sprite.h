@@ -153,6 +153,8 @@ public:
 	//load data
 	virtual void on_load(void* data){}
 	virtual void on_save(){}
+
+
 };
 
 class WIPRenderComponent : public WIPComponent
@@ -338,6 +340,7 @@ public:
   WIPOBJECT(WIPSprite,WIPObject);
   WIP_MEM(WIPSprite);
 
+  /*
   static void init_mem1()
   {
 	  if (g_mem_manager->pools.find("WIPSprite") == g_mem_manager->pools.end())
@@ -345,6 +348,7 @@ public:
 		  g_pool_allocator->new_pool(&g_mem_manager->pools["WIPSprite"], sizeof(WIPSprite),"WIPSprite", get_string_hash("WIPSprite"));
 	  }
   }
+  */
 
   static WIPSprite* create(f32 width, f32 height, WIPCollider::_CollisionTypes tp = WIPCollider::_CollisionTypes::E_STATIC_RIGIDBODY, f32 sx = 1.f, f32 sy = 1.f);
 	static void destroy(WIPSprite*  s);

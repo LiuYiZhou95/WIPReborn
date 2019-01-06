@@ -1,0 +1,198 @@
+#NPC
+@begin_event "npc_suoyao_gard" "press"
+@talk ""  "蜀山弟子：\n蜀山重地，禁止入内！"
+@end_event
+
+#Event
+@begin_event "npc_stand" "auto"
+@talk "pic/shushan/jianghu_1.png" "江湖人士：\n\n蜀山派，你们不顾江湖人士的反对，一意孤行重建锁妖塔，还不给大家一个说法。今天我们要用武力把蜀山、锁妖塔一并踏平！"
+@wait 0.1
+@talk "pic/shushan/jianghu_1.png" "江湖人士：\n\n李逍遥，你蜀山剑派在江湖上为非作歹，所作所为简直无法理喻。今天我要替天行道，铲除你这妖派贼首！龟爷爷的，大家给我上！"
+@wait 0.1
+@talk "pic/shushan/jianghu_2.png" "众人:\n\n踏平蜀山！踏平蜀山！"
+@wait 0.1
+@talk "pic/shushan/jianghu_2.png" "众人:\n\n铲除李逍遥！铲除李逍遥！"
+@wait 0.1
+@talk "pic/shushan/lixiaoyao_1.png" "李逍遥:\n\n江湖上的恩怨血仇由李某一人承担。锁妖塔是蜀山的禁地，任何人都不得入内！"
+@wait 0.1
+@talk "pic/shushan/jianghu_2.png" "众人：\n\n铲除李逍遥！铲除李逍遥！"
+@wait 0.1
+@talk "pic/shushan/lixiaoyao_1.png" "李逍遥:\n\n......"
+@wait 0.1
+@talk "pic/shushan/lixiaoyao_1.png" "李逍遥:\n\n我早已多次说过，重建锁妖塔的原因，虽然现在不便多说，但决不是奸恶之事。如各位一意孤行，逍遥只好多有得罪了。"
+@wait 0.1
+@talk "pic/shushan/jianghu_1.png" "江湖人士：\n\n嘿，蜀山掌门李逍遥，果然名不续传。不要高兴得太早了，接招！"
+@wait 0.1
+@set_int_var "test" 1
+@debug_print "test sit!"
+@end_event
+
+=begin
+@debug_print string
+@parallel1
+	statement1
+@parallel2
+	statement2
+@end_parallel
+statement1 and statement2 runs the same time.
+=end
+#npc_walk
+@begin_event "npc_walk" "press"
+@if game_var_cond_int "test" "==" 1
+	@debug_print "true staments 1"
+	@play_cg 0
+	@debug_print "true staments 2"
+@else
+	@talk "pic/shushan/jianghu_1.png" "你说啥？我屮艸芔茻！！！！@！￥%……&"
+	@debug_print "false staments 1"
+	@play_cg 1
+	@debug_print "false staments 2"
+	@debug_print "false staments 3"
+	@wait 3
+	@parallel1
+		@debug_print "cond1 1"
+		@debug_print "cond1 2"
+	@parallel2
+		@debug_print "cond2 1"
+		@debug_print "cond2 1"
+	@end_parallel
+@end
+@end_event
+
+=begin
+@begin_event "npc_walk111" "press"
+#comments1...
+@parallel1
+	@debug_print "cond1 1"
+	@parallel1
+		@debug_print "cond1 1"
+		@if op
+			@li
+		@else
+			@ipi
+		@end
+		@debug_print "cond1 2"
+	@parallel2
+		@if so
+			@otegwhoi
+			@flj
+		@else
+			@if ifh
+				@pojgwoei
+				@jfiouewh
+				@if jiodf
+					@jdiow
+					@fkiheoiu
+				@else
+					@fieo
+				@end				
+			@end
+		@end
+		@debug_print "cond2 1"
+		@debug_print "cond2 1"
+	@end_parallel
+	@debug_print "cond1 2"
+@parallel2
+	@debug_print "cond2 1"
+	@debug_print "cond2 1"
+@end_parallel
+@call1 11
+@talck l 2 2
+@whjile 
+@if condition_name param1 param2
+	@walk
+	@talk 1 
+    @if condition_name param1 param2 ...
+        @event param1 param2
+        @evene1 p s
+        @if condition_name1 o1 s3
+            @function1
+            @wait 10 ms
+            @if condition_name1 o1 s3
+                @function1
+                @wait 10 ms
+				@parallel1
+					@debug_print "cond1 1"
+					@debug_print "cond1 2"
+				@parallel2
+					@debug_print "cond2 1"
+					@debug_print "cond2 1"
+				@end_parallel
+                @if condition_name1 o1 s3
+                    @function1
+                    @wait 10 ms
+                    @if condition_name1 o1 s3
+                        @function1
+                        @wait 10 ms
+                    @end
+                @end
+            @end
+        @end
+    @else
+        @call
+        @if condi 11
+            @slo oe
+        @else
+            @action_name sf
+            @fe 1 1
+            @if cond_w 1 push
+                @enter 1 map.png
+                @if lcond 0 o1
+                    @get_name l lixiaoya
+                    @wait
+					@parallel1
+						@debug_print "cond1 1"
+						@debug_print "cond1 2"
+					@parallel2
+						@if sd 1
+							@sdf
+						@end
+						@debug_print "cond2 1"
+						@if oooo
+							@if callf
+								@walk
+							@end							
+						@else
+							@parallel1
+								@if lll
+									@df
+								@end
+							@parallel2
+								
+							@end_parallel
+						@end
+						@debug_print "cond2 1"
+					@end_parallel
+                @else
+                    @push
+                    @push1
+                    @zoom
+                @end
+                @wait 1
+
+            @end
+        @end
+    @end
+@else
+	@action_name param1 param2 param3
+    @if cond_w 1 push
+        @enter 1 map.png
+        @if lcond 0 o1
+            #wait for 1
+            @get_name l lixiaoya
+            @wait
+        @else
+            #exit show
+            @push
+            @push1
+            @zoom
+        @end
+        @wait 1
+    @end
+@end
+@ends
+@call
+@skd
+#comments2...
+@end_event
+=end

@@ -430,10 +430,9 @@
     <ClCompile Include="..\src\global_init.cpp">
       <Filter>Engine\Common</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\AppManager.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="C:\EngineNew\CMakeLists.txt" />
+    <ClCompile Include="..\src\AppManager.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="box2d">

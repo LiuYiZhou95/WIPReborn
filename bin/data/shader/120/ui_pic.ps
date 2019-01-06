@@ -8,6 +8,8 @@ uniform vec4 in_color;
 
 void main()
 {
-	gl_FragColor = texture2D(in_texture, out_texcoord);
+	vec2 iv = out_texcoord;
+	iv.y = 1 - iv.y;
+	gl_FragColor = texture2D(in_texture, iv);
 	gl_FragColor = in_color*gl_FragColor;
 }

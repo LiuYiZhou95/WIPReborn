@@ -114,10 +114,13 @@ public:
 	void init_components();
 	void destroy_components();
 	WIPSprite* get_sprite_by_tag(const std::string& name) const;
+	//used for level load, find object in loaded container ready for load to scene(currentlly not in scene)
+	WIPSprite* get_loaded_sprite_by_tag(const std::string& name) const;
 	WIPCamera* get_camera(const std::string& name) const;
 	void clear(bool destroy_persistent=false);
 
 	void cancel_object_change();
+	//handle runtime object change
 	void submit_object_change();
 	//creating or deleting objects will happened at the end of a frame!
 	void pending_objects(WIPSprite* s);

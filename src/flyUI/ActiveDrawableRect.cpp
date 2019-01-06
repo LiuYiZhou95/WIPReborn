@@ -1,6 +1,5 @@
 #include "ActiveDrawableRect.h"
-#include "../wip/Input.h"
-#include "../wip/Renderer.h"
+#include "Render.h"
 #include <iostream>
 
 
@@ -10,7 +9,8 @@ ActiveDrawableRect::ActiveDrawableRect(void)
 	_last_mouse = false;
 	_all_num = 0;
 	bdraw = true;
-	_fbo = WIPRenderTexture::create(1,1);
+	_fbo = nullptr;
+	_bactive = true;
 }
 
 
@@ -25,23 +25,19 @@ void ActiveDrawableRect::set_position(int x,int y)
 	_y = y;
 }
 
-void ActiveDrawableRect::update(float dt)
+void ActiveDrawableRect::update(float dt, int x, int y)
 {
 	if(!_bactive) 
 		return;
-	if(_bmouse_position)
-	{
-		set_position(Input::get_mouse_x(),Input::get_mouse_y());
-		update_editor();
-	}
+
 }
 
 void ActiveDrawableRect::draw(int x,int y)
 {
 	if(x<0||y<0)
-		g_renderer->render(_fbo->get_texture_id(),_x,_y,_width,_height);
+		g_temp_uisys->draw_picture(_x, _y, _width, _height, _fbo);
 	else
-		g_renderer->render(_fbo->get_texture_id(),x,y,_width,_height);
+		g_temp_uisys->draw_picture(x, y, _width, _height, _fbo);
 }
 
 void ActiveDrawableRect::draw_internal(int x,int y)
@@ -82,7 +78,7 @@ void ActiveDrawableRect::reshape(int width,int height,int x,int y)
 	_height = height;
 }
 
-WIPRenderTexture* ActiveDrawableRect::get_fbo()
+WIPRenderTexture2D* ActiveDrawableRect::get_fbo()
 {
 	return _fbo;
 }
@@ -104,17 +100,33 @@ bool ActiveDrawableRect::is_mouse_position()
 	return _bmouse_position;
 }
 
-void ActiveDrawableRect::update_editor()
+void ActiveDrawableRect::update_editor(int x, int y)
 {
-	bool m = Input::get_sys_key_pressed(WIP_MOUSE_LBUTTON);
-	if(m&&!_last_mouse)
+	if (!_bactive)
+		return;
+	int _mx = Input::get_mouse_x();
+	int _my = Input::get_mouse_y();
+
+	
+	if (_last_mouse)
 	{
-		std::cout<<"("<<Input::get_mouse_x()<<","<<Input::get_mouse_y()<<")"<<std::endl;
-		_x = Input::get_mouse_x();
-		_y = Input::get_mouse_y();
-		cancel_mouse_position();
+		_x = _mx - x - _width/2;
+		_y = _my - y - _height/2;
+		LOG_INFO("%d,%d", _x, _y);
+		if (Input::get_sys_key_up(WIP_MOUSE_RBUTTON))
+		{
+			_last_mouse = false;
+		}
 	}
-	_last_mouse = m;
+	else
+	{
+		bool m = Input::get_sys_key_up(WIP_MOUSE_RBUTTON);
+		if (m)
+		{
+			if (_mx >= _x + x && _mx <= _x + x + _width && _my >= _y + y && _my <= _y + y + _height)
+				_last_mouse = true;
+		}
+	}
 
 }
 

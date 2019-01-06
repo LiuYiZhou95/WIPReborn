@@ -14,6 +14,9 @@ RBPoolAllctor::RBPoolAllctor()
   //stdlib malloc未要求对齐：http://www.cplusplus.com/reference/cstdlib/malloc/
   //选择必须为8的倍数
   //new出来的内存则是最大object对齐的：http://en.cppreference.com/w/cpp/memory/new/operator_new
+  //_alignment should be less than 128 byte
+  //since the hightest bit of adjust(1 byte in total) is used
+  //by recycle tag[which is used to indicate wheater the node should be recycle by auto-mem-recycler]
   _alignment = 8;
   _total_alloced = 0;
   mm = 0;
@@ -216,7 +219,7 @@ void *RBPoolAllctor::allocate_aligned(size_t tsize)
     return nullptr;
   size_t tmask = (_alignment - 1);
   size_t misaligment = (origin_address & tmask);
-  //如果本来已经按照8字节对齐，调整是8字节，地址前面将留空8字节（至少要留下1字节），
+  //如果本来已经按照8字节对齐，调整是8字节，地址前面将留空8字节（最少会留下1字节），
   //所以在这种实现下，即使本来分配的内存也是对齐的也存在浪费，因为至少留下的1字节是必须的
   size_t adjust = _alignment - misaligment;
   CHECK(adjust>0);

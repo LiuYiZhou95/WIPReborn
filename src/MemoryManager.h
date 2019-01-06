@@ -4,6 +4,7 @@
 #include "RefCount.h"
 #include "MemoryPool.h"
 #include "Logger.h"
+#include <hash_map>
 
 //refcount is used for both system new and wip_new
 //if class use both refcount and wip_new, be sure to overload the 'delete' operater for it.
@@ -16,6 +17,8 @@ unsigned get_string_hash(const char* str);
 
 extern RBPoolAllctor* g_pool_allocator;
 
+//cache allocated mem nodes, do recycle
+//and clear at last
 class WIPMemoryManager : public FRefCountedObject
 {
 public:
@@ -26,11 +29,20 @@ public:
 			_instance = new WIPMemoryManager();
 		return _instance;
 	}
-	void report()
+	~WIPMemoryManager()
+	{
+		auto it = pools.begin();
+		for (;it!=pools.end();++it)
+		{
+			 it->second;
+		}
+		//g_pool_allocator->clear();
+	}
+	void report(bool show_detail=false)
 	{
 
 		{
-			g_pool_allocator->report();
+			g_pool_allocator->report(show_detail);
 		}
 
 	}
@@ -40,7 +52,7 @@ public:
 	}
 
 	int allocated=0;
-	std::map<std::string, void*> pools;
+	std::hash_map<std::string, void*> pools;
 };
 
 extern WIPMemoryManager* g_mem_manager;

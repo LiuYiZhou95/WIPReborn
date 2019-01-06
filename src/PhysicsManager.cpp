@@ -52,6 +52,7 @@ WIPPhysicsManager* WIPPhysicsManager::instance()
 WIPPhysicsManager::WIPPhysicsManager()
 {
 	_phy_space = nullptr;
+	draw_debug_data = false;
 }
 
 WIPPhysicsManager::~WIPPhysicsManager()
@@ -131,47 +132,6 @@ void  WIPPhysicsManager::update(WIPScene* scene, f32 dt)
 			continue;
 		if (!s->_collider->_active)
 			continue;
-		/*
-		RBVector2 vert[4];
-		b2Vec2 v1[4];
-		RBVector2 scale2(s->_transform->scale_x, s->_transform->scale_y);
-		s->get_anchor_vertices(vert);
-		vert[0] *= scale2;
-		vert[1] *= scale2;
-		vert[2] *= scale2;
-		vert[3] *= scale2;
-		v1[0].x = vert[3].x*s->_collider->_cb_scale_x;
-		v1[0].y = vert[3].y*s->_collider->_cb_scale_y;
-
-		v1[1].x = vert[0].x*s->_collider->_cb_scale_x;
-		v1[1].y = vert[0].y*s->_collider->_cb_scale_y;
-
-		v1[2].x = vert[2].x*s->_collider->_cb_scale_x;
-		v1[2].y = vert[2].y*s->_collider->_cb_scale_y;
-
-		v1[3].x = vert[1].x*s->_collider->_cb_scale_x;
-		v1[3].y = vert[1].y*s->_collider->_cb_scale_y;
-		*/
-		//s->_collider->_polygon_shape->Set(v1, 4);
-		//lt lb rt rb
-		//s->_collider->_polygon_shape->SetAsBox((v1[2].x - v1[0].x)*0.5f, (v1[0].y - v1[1].y)*0.5f, b2Vec2(0,0), 0);
-
-		//b2Fixture* fixture = b->GetFixtureList();
-		/*
-		if (fixture)
-		{
-			b->DestroyFixture(fixture);
-			b2FixtureDef fixturedef;
-			fixturedef.userData = s;
-			//fixturedef.isSensor = true;
-			fixturedef.shape = s->_collider->_polygon_shape;
-			b->CreateFixture(&fixturedef);
-		}
-		else
-		{
-			LOG_WARN("No fixture!");
-		}
-		*/
 		b->SetTransform(b2Vec2(s->_transform->world_x, s->_transform->world_y), s->_transform->rotation);
 		b->SetAwake(true);
 		
@@ -179,8 +139,15 @@ void  WIPPhysicsManager::update(WIPScene* scene, f32 dt)
 
 
 	_phy_space->Step(dt, velocityIterations, positionIterations);
-	_phy_space->DrawDebugData();
-
+	if (draw_debug_data)
+	{
+		g_rhi->change_viewport(debug_draw.cam->viewport);
+		g_rhi->enable_depth_test();
+		g_rhi->set_depth_write(true);
+		g_rhi->enable_blend();
+		g_rhi->set_blend_function();
+		_phy_space->DrawDebugData();
+	}
 
 	for (b2Body* b = _phy_space->GetBodyList(); b; b = b->GetNext())
 	{

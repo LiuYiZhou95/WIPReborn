@@ -246,6 +246,8 @@ void WIPScene::update_zorder_by_type_tag(const WIPSprite*  s, std::string type_t
 }
 
 
+
+
 WIPCamera* WIPScene::get_camera(const std::string& name) const
 {
 	for (auto i : cameras)
@@ -269,6 +271,19 @@ WIPSprite* WIPScene::get_sprite_by_tag(const std::string& name) const
 	}
 	return nullptr;
 }
+
+WIPSprite * WIPScene::get_loaded_sprite_by_tag(const std::string & name) const
+{
+	for (auto i : loaded_objects)
+	{
+		if (i->get_tag() == name)
+		{
+			return i.GetReference();
+		}
+	}
+	return nullptr;
+}
+
 void WIPScene::cancel_object_change()
 {
 	_deleting_objects.clear();
@@ -312,6 +327,7 @@ void WIPScene::creating_object(WIPSprite* s)
 	_deleting_objects.push_back(s);
 }
 //issue : scene only do add_sprite / remove_sprite(cannot delete continuously when iter objects) or clear
+//you must submit if you want to find objects with get_sprite_* method
 void WIPScene::submit_level_change()
 {
 	if (level_change_state & 2)

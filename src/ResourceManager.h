@@ -32,7 +32,8 @@ struct TextData
 		E_ASCII,
 		E_UNICODE,
     E_MEM,
-    E_STRING
+    E_STRING,
+	E_WSTRING,
 	};
 	TextContentType conten_type;
 };
@@ -56,6 +57,7 @@ enum WIPResourceType
 	EFont,
 	OTHER,
 	EMPTY,
+	WTEXT,
 };
 
 //note that all the handler instances are produced in WIPResourceManager,impossible for other places.

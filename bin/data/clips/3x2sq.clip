@@ -1,0 +1,64 @@
+[head]
+texture = jiangshi_bleft.png
+total_frame = 6
+
+
+[1]
+lb_x = 0
+lb_y = 0
+lt_x = 0
+lt_y = 0.33333
+rt_x = 0.5 
+rt_y = 0.33333
+rb_x = 0.5 
+rb_y = 0
+
+[2]
+lb_x = 0.5
+lb_y = 0
+lt_x = 0.5
+lt_y = 0.33333
+rt_x = 1.0
+rt_y = 0.33333
+rb_x = 1.0
+rb_y = 0
+
+[3]
+lb_x = 0
+lb_y = 0.33333
+lt_x = 0
+lt_y = 0.66666
+rt_x = 0.5
+rt_y = 0.66666
+rb_x = 0.5 
+rb_y = 0.33333
+
+[4]
+lb_x = 0.5
+lb_y = 0.33333
+lt_x = 0.5
+lt_y = 0.66666
+rt_x = 1.0
+rt_y = 0.66666
+rb_x = 1.0
+rb_y = 0.33333
+
+[5]
+lb_x = 0
+lb_y = 0.66666
+lt_x = 0
+lt_y = 1.0
+rt_x = 0.5
+rt_y = 1.0
+rb_x = 0.5 
+rb_y = 0.66666
+
+[6]
+lb_x = 0.5
+lb_y = 0.66666
+lt_x = 0.5
+lt_y = 1.0
+rt_x = 1.0
+rt_y = 1.0
+rb_x = 1.0
+rb_y = 0.66666
